@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './register.css'
 
 
 const Register = () => {
@@ -33,30 +34,30 @@ const Register = () => {
         // .then(json => console.log(json))
     }
     return(
-        <div>
-            <h1>Sign Up</h1>
+        <div className='sign-inner'>
+            <h1>Get Started</h1>
             <form onSubmit={handleSumbit}>
-            <input type="text" 
-            name='firstName' 
-            value={firstName} 
-            onChange={(e) => setFirstName(e.target.value)}
-            placeholder='first name'/>
-            <input type="text" 
-            name='lastName' 
-            value={lastName} 
-            onChange={(e) => setLastName(e.target.value)} 
-            placeholder='last name'/>
-            <input type="text" 
-            name='email' 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            placeholder='email'/>
-            <input type="password" 
-            name='password' 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            placeholder='password'/>
-            <button type="submit">Sign Up</button>
+                <input type="text" 
+                name='firstName' 
+                value={firstName} 
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder='First Name'/>
+                <input type="text" 
+                name='lastName' 
+                value={lastName} 
+                onChange={(e) => setLastName(e.target.value)} 
+                placeholder='Last Name'/>
+                <input type="text" 
+                name='email' 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+                placeholder='Email'/>
+                <input type="password" 
+                name='password' 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                placeholder='Password'/>
+                <button type="submit">Register</button>
             </form>
         </div>
     )

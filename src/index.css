@@ -6,7 +6,7 @@ body {
     font-family: 'Kaushan Script', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('img/dondon.jpg') no-repeat;
+  background: url('img/dondon.jpg') fixed no-repeat;
   background-size: cover;
 }
 
