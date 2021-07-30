@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Register from './Components/Auth/Register/Register';
+import Signup from './Components/Auth/Signup/Signup';
 
 function App() {
   return (
     <div>
-      <Register style={{alignText: 'center'}}/>
+      <Signup style={{alignText: 'center'}}/>
     </div>
   );
 }
