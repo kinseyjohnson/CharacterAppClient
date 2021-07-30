@@ -7,7 +7,7 @@ const Random = () => {
     // const [characterBgDrop, setCharacterBgDrop] = useState('');
     // const [alignmentDrop, setAlignmentDrop] = useState('');
 
-    function ranClassDrop() {
+    function runClassDrop() {
         const classesArr = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard']
         let ranClass = Math.round((Math.random() * classesArr.length) - 0.5);
         if (ranClass <= 0) {
@@ -17,7 +17,7 @@ const Random = () => {
         } 
     }
 
-    function ranRaceDrop() {
+    function runRaceDrop() {
         const RacesArr = ['Dwarf', 'Elf', 'Halfiling', 'Human', 'Dragonborn', 'Gnome', 'Half-Elf', 'Half-Orc', 'Tiefling']
         let Race = Math.round((Math.random() * RacesArr.length) - 0.5);
         if (Race <= 0) {
@@ -27,7 +27,7 @@ const Random = () => {
         } 
     }
 
-    function ranCharBgDrop() {
+    function runCharBgDrop() {
         const CharBgsArr = ['Acolyte', 'Criminal/Spy', 'Folk Hero', 'Noble', 'Sage', 'Soldier']
         let CharBg = Math.round((Math.random() * CharBgsArr.length) - 0.5);
         if (CharBg <= 0) {
@@ -37,7 +37,7 @@ const Random = () => {
         } 
     }
 
-    function ranAlignmentDrop() {
+    function runAlignmentDrop() {
         const AlignmentsArr = ['Lawful Good', 'Neutral Good', 'Chaotic Good', 'LAwful Neutral', 'True Neutral', 'Chaotic Neutral', 'Lawful Evil', 'Neutral Evil', 'Chaotic Evil']
         let Alignment = Math.round((Math.random() * AlignmentsArr.length) - 0.5);
         if (Alignment <= 0) {
@@ -48,10 +48,10 @@ const Random = () => {
     }
 
     function getRandom () {
-        ranClassDrop()
-        ranRaceDrop()
-        ranCharBgDrop()
-        ranAlignmentDrop()
+        runClassDrop();
+        runRaceDrop();
+        runCharBgDrop();
+        runAlignmentDrop();
     }
     return(
         <>
