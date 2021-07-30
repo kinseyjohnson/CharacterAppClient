@@ -1,13 +1,23 @@
 import React, {useState} from "react";
-import './register.css'
+import './sign-log.css';
 
 
-const Register = () => {
+const Signup = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [toggle, setToggle] = useState(false)
+    const [sayWarning, setSayWarning] = useState('Email')
 
+
+
+    let clearInputs = () => {
+        setEmail('');
+        setPassword('');
+        setFirstName('');
+        setLastName('');
+    }
 
 
     let handleSumbit = (e) => {
@@ -17,10 +27,10 @@ const Register = () => {
             method: 'POST',
             body: JSON.stringify({
                 user: {
-                    email: email,
-                    password: password,
-                    firstName: firstName,
-                    lastName: lastName
+                    email,
+                    password,
+                    firstName,
+                    lastName
                 }
             }),
             headers: new Headers({
@@ -30,8 +40,16 @@ const Register = () => {
         .then(res => res.json())
         .then((data) => {
             console.log(data.sessionToken)
+            if (data.sessionToken === undefined){
+                setToggle(true);
+                setSayWarning('This email address is already used')
+            } else {
+                setToggle(false);
+                setSayWarning('Email')
+            }
+            clearInputs()
         })
-        // .then(json => console.log(json))
+
     }
     return(
         <div className='sign-inner'>
@@ -46,21 +64,22 @@ const Register = () => {
                 name='lastName' 
                 value={lastName} 
                 onChange={(e) => setLastName(e.target.value)} 
-                placeholder='Last Name'/>
+                placeholder='lastName'/>
                 <input type="text" 
                 name='email' 
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)} 
-                placeholder='Email'/>
+                placeholder={sayWarning}
+                className={toggle === true ? "warning" : null}/>
                 <input type="password" 
                 name='password' 
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)} 
                 placeholder='Password'/>
-                <button type="submit">Register</button>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
     )
 }
 
-export default Register;
+export default Signup;
