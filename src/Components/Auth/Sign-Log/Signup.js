@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import './register.css'
+import './sign-log.css';
 
 
 const Signup = () => {

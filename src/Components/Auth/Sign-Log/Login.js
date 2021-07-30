@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Form, FormGroup, Input, Button} from 'reactstrap';
-import './login.css';
+import './sign-log.css';
 // import './Auth/login.css'
 
 const Login = (props) => {
@@ -12,23 +12,28 @@ const Login = (props) => {
         event.preventDefault();
         fetch('http://localhost:3000/user/login', {
             method: "POST",
-            body: JSON.stringify({email: email, password: password}),
+            body: JSON.stringify({
+                user:{
+                    email: email, 
+                    password: password
+                }
+            }),
             headers: new Headers({
-                'Content-Type': 'application/json'
+                "Content-Type": 'application/json',
             })
             }).then(
                 (response) => response.json()
             ).then((data) => {
-                props.updateToken(data.sessionToken);
+                // props.updateToken(data);
+                console.log(data.sessionToken);
+                console.log(data)
             })
-            console.log(email, password);
+            // console.log(email, password);
         }
 
         return (
             <div className='sign-inner'>
-                <h1 style={{
-                    textAlign: 'center'
-                }}>Login</h1>
+                <h1 style={{textAlign: 'center'}}>Login</h1>
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
                         <Input 
