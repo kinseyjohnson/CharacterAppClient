@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
-import Auth from './Auth/Login'; 
+// import Login from './Components/Auth/Sign-Log/Login'; 
+// import Signup from './Components/Auth/Sign-Log/Signup';
+import Auth from './Components/Auth'
+// import { Route, BrowserRouter as Router} from 'react-router-dom';
 
 function App() {
 
@@ -11,7 +14,7 @@ function App() {
 
   return (
     <div>
-      <Auth style={{alignText: 'center'}}/>
+      <Auth />
     </div>
   );
 }

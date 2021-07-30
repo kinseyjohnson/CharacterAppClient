@@ -1,34 +1,41 @@
 import React, { useState } from 'react';
 import {Form, FormGroup, Input, Button} from 'reactstrap';
-import './login.css';
-// import './Auth/login.css'
+import { Route, BrowserRouter as Router, Link} from 'react-router-dom';
+import Signup from './Signup';
 
 const Login = (props) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+// const [login, setLogin] = useState(true);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch('http://localhost:3000/user/login', {
             method: "POST",
-            body: JSON.stringify({email: email, password: password}),
+            body: JSON.stringify({
+                user:{
+                    email: email, 
+                    password: password
+                }
+            }),
             headers: new Headers({
-                'Content-Type': 'application/json'
+                "Content-Type": 'application/json',
             })
             }).then(
                 (response) => response.json()
             ).then((data) => {
-                props.updateToken(data.sessionToken);
+                // props.updateToken(data);
+                console.log(data.sessionToken);
+                console.log(data)
+                
             })
-            console.log(email, password);
+    
+            // console.log(email, password);
         }
-
         return (
             <div className='sign-inner'>
-                <h1 style={{
-                    textAlign: 'center'
-                }}>Login</h1>
+                <h1 style={{textAlign: 'center'}}>Login</h1>
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
                         <Input 
@@ -38,7 +45,7 @@ const Login = (props) => {
                         placeholder="Email"/>
                     </FormGroup>
                     <FormGroup>
-                        <Input
+                        <Input type="password"
                         onChange={(e) => setPassword(e.target.value)}
                         name="password"
                         value={password}
@@ -46,6 +53,14 @@ const Login = (props) => {
                     </FormGroup>
                     <Button type="submit">Login</Button>
                 </Form>
+                <Router>
+                <div className='sign-up'>
+                    <h3 style={{fontFamily: 'arial'}}>Don't have an account?
+                    <Link to="/register"> Sign up!</Link>
+                    <Route path='/Register' exact component={Signup} />
+             </h3>
+                </div>
+                </Router>
             </div>
         )
     }
