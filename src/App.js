@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
-// import Signup from './Components/Auth/Sign-Log/Signup';
-// import Login from './Components/Auth/Sign-Log/Login' 
 import Auth from './Components/Auth/Auth';
-import Random from './Random';
+// import Random from './Random';
+// import Login from './Components/Auth/Sign-Log/Login'; 
+// import Signup from './Components/Auth/Sign-Log/Signup';
+// import Auth from './Components/Auth'
+// import { Route, BrowserRouter as Router} from 'react-router-dom';
 
 function App() {
 
@@ -24,7 +26,8 @@ function App() {
       { toggle ? <Auth /> : null}
       {/* <Signup style={{alignText: 'center'}}/>
       <Login style={{alignText: 'center'}}/> */}
-      <Random />
+      {/* <Random /> */}
+      {/* <Auth /> */}
     </div>
   );
 }
