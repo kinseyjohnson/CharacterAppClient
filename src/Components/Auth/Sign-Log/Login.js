@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import {Form, FormGroup, Input, Button} from 'reactstrap';
 import './sign-log.css';
 // import './Auth/login.css'
-import { Route, BrowserRouter as Router, Link} from 'react-router-dom';
+import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import Signup from './Signup';
 
 const Login = (props) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [newToggle, setNewToggle] = useState(false)
 // const [login, setLogin] = useState(true);
 
     const handleSubmit = (event) => {
@@ -27,12 +28,14 @@ const Login = (props) => {
             }).then(
                 (response) => response.json()
             ).then((data) => {
-                // props.updateToken(data);
+                console.log(data)
+                console.log(data.message);
+                if (data.sessionToken === undefined){
+                    setNewToggle(!newToggle)
+                }
                 console.log(data.sessionToken);
                 console.log(data)
             })
-                
-
             // console.log(email, password);
         }
         return (
@@ -54,15 +57,19 @@ const Login = (props) => {
                         placeholder="Password"/>
                     </FormGroup>
                     <Button type="submit">Login</Button>
+
+                    {newToggle ? <p className='warning-text'>Incorrect password or Email</p> : null}
                 </Form>
-                <Router>
-                <div className='sign-up'>
-                    <h3 style={{fontFamily: 'arial'}}>Don't have an account?
+                {/* <Router> */}
+                    <Switch>
+                    <div className='sign-up'>
+                        <h3 style={{fontFamily: 'arial'}}>Don't have an account?
                         <Link to="/register"> Sign up!</Link>
-                        <Route path='/Register' exact component={Signup} />
+                        <Route path='/register' exact component={Signup} />
                     </h3>
-                </div>
-                </Router>
+                    </div>
+                    </Switch>
+                {/* </Router> */}
             </div>
         )
     }
