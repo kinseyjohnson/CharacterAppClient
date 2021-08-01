@@ -41,6 +41,7 @@ const Signup = () => {
         })
         .then(res => res.json())
         .then((data) => {
+            console.log(data)
             console.log(data.sessionToken)
             if (data.sessionToken === undefined){
                 setToggle(true);
@@ -81,13 +82,13 @@ const Signup = () => {
                 <button type="submit">Sign Up</button>
                 {/* <Router> */}
                     <Switch>
-                <div className='login'>
-                    <h4 style={{fontFamily: 'arial'}}>Already have an account?
-                    <Link to="/login"> Login!</Link>
-                    <Route path='/login' exact component={Login} />
-             </h4>
-                </div>
-                </Switch>
+                    <div className='login'>
+                        <h3 style={{fontFamily: 'arial'}}>Already have an account?
+                            <Link to="/login"> Login!</Link>
+                            <Route path='/login' exact component={Login} />
+                        </h3>
+                    </div>
+                    </Switch>
                 {/* </Router> */}
             </form>
         </div> 

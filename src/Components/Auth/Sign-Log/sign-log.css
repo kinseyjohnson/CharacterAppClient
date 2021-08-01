@@ -1,7 +1,7 @@
 .sign-inner{
     margin: 0 auto;
+    margin-top: 20vh;
     width: 436px;
-    height: 437px; 
     text-align: center;
     background: linear-gradient(180deg, rgba(247, 180, 132, 0.8) 0%, rgba(255, 125, 4, 0.432) 100%);
     border: 1px solid #000000;
@@ -46,6 +46,10 @@
 /* ! PLACEHOLDER SIGN UP MESSAGE WARNING */
 .warning{
     font-size: 22px !important;
+}
+.warning-text{
+    font-size: 22px;
+    color: black;
 }
 .warning::placeholder{
     color: #ed5249;
