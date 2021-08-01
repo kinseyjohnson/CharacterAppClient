@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import './sign-log.css';
-import { Route, BrowserRouter as Router, Link} from 'react-router-dom';
+import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import Login from './Login';
 
 
@@ -79,16 +79,18 @@ const Signup = () => {
                 onChange={(e) => setPassword(e.target.value)} 
                 placeholder='Password'/>
                 <button type="submit">Sign Up</button>
-                <Router>
+                {/* <Router> */}
+                    <Switch>
                 <div className='login'>
-                    <h3 style={{fontFamily: 'arial'}}>Already have an account?
+                    <h4 style={{fontFamily: 'arial'}}>Already have an account?
                     <Link to="/login"> Login!</Link>
                     <Route path='/login' exact component={Login} />
-             </h3>
+             </h4>
                 </div>
-                </Router>
+                </Switch>
+                {/* </Router> */}
             </form>
-        </div>
+        </div> 
     )
 }
 

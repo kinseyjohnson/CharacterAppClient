@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Form, FormGroup, Input, Button} from 'reactstrap';
-import { Route, BrowserRouter as Router, Link} from 'react-router-dom';
+import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import Signup from './Signup';
 
 const Login = (props) => {
@@ -53,14 +53,16 @@ const Login = (props) => {
                     </FormGroup>
                     <Button type="submit">Login</Button>
                 </Form>
-                <Router>
+                {/* <Router> */}
+                    <Switch>
                 <div className='sign-up'>
-                    <h3 style={{fontFamily: 'arial'}}>Don't have an account?
+                    <h4 style={{fontFamily: 'arial'}}>Don't have an account?
                     <Link to="/register"> Sign up!</Link>
                     <Route path='/Register' exact component={Signup} />
-             </h3>
+             </h4>
                 </div>
-                </Router>
+                </Switch>
+                {/* </Router> */}
             </div>
         )
     }
