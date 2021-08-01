@@ -73,12 +73,15 @@ const Signup = () => {
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)} 
                 placeholder={sayWarning}
-                className={toggle === true ? "warning" : null}/>
+                className={toggle === true ? "warning" : null}
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
                 <input type="password" 
                 name='password' 
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)} 
-                placeholder='Password'/>
+                placeholder='Password'
+                pattern="[a-zA-z0-9]{5,}"
+                title="At least 5 characters"/>
                 <button type="submit">Sign Up</button>
                 {/* <Router> */}
                     <Switch>

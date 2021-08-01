@@ -8,9 +8,9 @@ function Auth() {
     <Router>
       <div className="Auth">
         {/* <Link to="/register"> Sign up!</Link> */}
-        <Route path="/register" exact component={Signup} />
+        <Route exact path="/register"><Signup /></ Route>
         {/* <Link to="/login"> Sign up!</Link> */}
-        <Route path="/login"  exact component={Login} />
+        <Route exact path="/login"> <Login /> </ Route>
       </div>
     </Router>
   );
