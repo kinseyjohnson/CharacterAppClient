@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Auth from './Components/Auth/Auth';
 import '../src/Components/Landing/landingpage.css'
+import data from './data.txt'
 // import Auth from './Components/Auth/Auth';
-// import Random from './Random';
+import Random from './Random';
 // import Login from './Components/Auth/Sign-Log/Login'; 
 // import Signup from './Components/Auth/Sign-Log/Signup';
 // import Auth from './Components/Auth'
@@ -14,7 +15,7 @@ import Landing from './Components/Landing/LandingPage';
 import Create from './Components/Character/CharCreate';
 // import Auth from './Components/Auth/Auth'
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
-import Footer from './Components/Footer/Footer';
+import Footer from './Components/Footer/Footer'
 
 function App() {
   const [toggle, setToggle] = useState(true);
@@ -47,6 +48,7 @@ function App() {
 
     // style={{width: "1200px",
     // margin: "0 auto"}}
+
   return (
     <div>
       {/* <Router><Route path="/"><button onClick={Tog} className='button'>Start Here!</button></Route></Router> */}
@@ -55,9 +57,11 @@ function App() {
       <Router>
         <React.Fragment>
           <Switch>
-            <Link to="/login">
+            <div className="landingpage-btn">            
+              <Link to="/login" className="landingpage-link">
               <button onClick={Tog} className='button'>Start Here!</button>
-            </Link>
+              </Link>
+            </div>
           </Switch>
         </React.Fragment>
       </Router> 
@@ -66,7 +70,7 @@ function App() {
       {/* {toggle ? <Auth/> : null} */}
       {/* <Signup style={{alignText: 'center'}}/>
       <Login style={{alignText: 'center'}}/> */}
-      {/* <Random /> */}
+      <Random />
       {/* <Auth /> */}
       {/* <Create/> */}
       {/* <Landing /> */}

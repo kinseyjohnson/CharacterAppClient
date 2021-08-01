@@ -1,7 +1,31 @@
-.button{
-    margin-left: calc(100% - 50%);
+.h2{
+    display: flex;
     justify-content: center;
+    margin-top: 10%;
+    color: lightgrey;
+}
+
+.p{
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+    font-size: 30px;
+    color: lightgrey;
+}
+
+.landingpage-btn{
     width: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.landingpage-link{
+    width: inherit;
+}
+
+.button{
+    justify-content: center;
+    width: inherit;
     height: 50px;
     box-shadow: 7px -4px 7px black;
     border-radius: 10px;
@@ -17,20 +41,4 @@
     transition: 0.5s;
     opacity: 0.5;
     transition-property: opacity;
-}
-
-
-.h2{
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
-    color: lightgrey;
-}
-
-.p{
-    margin-left: 34%;
-    width: 500px;
-    text-align: center;
-    font-size: 30px;
-    color: lightgrey;
 }
