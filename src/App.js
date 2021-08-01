@@ -14,6 +14,7 @@ import Landing from './Components/Landing/LandingPage';
 import Create from './Components/Character/CharCreate';
 // import Auth from './Components/Auth/Auth'
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   const [toggle, setToggle] = useState(true);
@@ -79,6 +80,7 @@ function App() {
       {toggle ? <Auth/> : null} */}
       {/* <Signup style={{alignText: 'center'}}/> */}
       {/* <Login style={{alignText: 'center'}}/> */}
+      <Footer />
     </div>
   );
 }

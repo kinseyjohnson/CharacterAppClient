@@ -94,7 +94,7 @@ const Signup = () => {
                     </Switch>
                 {/* </Router> */}
             </form>
-        </div>
+        </div> 
     )
 }
 
