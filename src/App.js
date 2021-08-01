@@ -17,10 +17,10 @@ function App() {
 
   return (
     <div>
-      {/* <Create/> */}
-      <Landing />
+      <Create/>
+      {/* <Landing />
       <button onClick={Tog} className='button'>Start Here!</button>
-      {toggle ? <Auth/> : null}
+      {toggle ? <Auth/> : null} */}
       {/* <Signup style={{alignText: 'center'}}/> */}
       {/* <Login style={{alignText: 'center'}}/> */}
     </div>
