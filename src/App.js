@@ -16,6 +16,7 @@ import Create from './Components/Character/CharCreate';
 // import Auth from './Components/Auth/Auth'
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import Footer from './Components/Footer/Footer'
+import Test from './test';
 
 function App() {
   const [toggle, setToggle] = useState(true);
@@ -70,7 +71,8 @@ function App() {
       {/* {toggle ? <Auth/> : null} */}
       {/* <Signup style={{alignText: 'center'}}/>
       <Login style={{alignText: 'center'}}/> */}
-      <Random />
+      {/* <Random /> */}
+      <Test />
       {/* <Auth /> */}
       {/* <Create/> */}
       {/* <Landing /> */}
@@ -78,7 +80,7 @@ function App() {
       {/* <button onClick={Tog}
       className="button"
       >Start Here!</button> */}
-      {/* <Create/> */}
+      <Create/>
       {/* <Landing />
       <button onClick={Tog} className='button'>Start Here!</button>
       {toggle ? <Auth/> : null} */}
