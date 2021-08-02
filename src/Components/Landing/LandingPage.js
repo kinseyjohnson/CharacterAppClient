@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './landingpage.css'
-import Auth from './Auth/Auth'
+// import Auth from './Auth/Sign-Log/Auth';
 
 const Landing = () => {
-    const [toggle, setToggle] = useState(false);
-    const Tog = () => setToggle(!toggle)
+    // const [toggle, setToggle] = useState(false);
+    // const Tog = () => setToggle(!toggle)
 
     return(
         <div className='mainDiv'>

@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import './sign-log.css';
+import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
+import Login from './Login';
 
 
 const Signup = () => {
@@ -39,6 +41,7 @@ const Signup = () => {
         })
         .then(res => res.json())
         .then((data) => {
+            console.log(data)
             console.log(data.sessionToken)
             if (data.sessionToken === undefined){
                 setToggle(true);
@@ -64,7 +67,7 @@ const Signup = () => {
                 name='lastName' 
                 value={lastName} 
                 onChange={(e) => setLastName(e.target.value)} 
-                placeholder='lastName'/>
+                placeholder='Last Name'/>
                 <input type="text" 
                 name='email' 
                 value={email} 
@@ -77,6 +80,16 @@ const Signup = () => {
                 onChange={(e) => setPassword(e.target.value)} 
                 placeholder='Password'/>
                 <button type="submit">Sign Up</button>
+                {/* <Router> */}
+                    <Switch>
+                    <div className='login'>
+                        <h3 style={{fontFamily: 'arial'}}>Already have an account?
+                            <Link to="/login"> Login!</Link>
+                            <Route path='/login' exact component={Login} />
+                        </h3>
+                    </div>
+                    </Switch>
+                {/* </Router> */}
             </form>
         </div>
     )
