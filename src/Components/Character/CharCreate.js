@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './charcreate.css'
+import Random from '../../Random';
 
 const Create = (props) => {
     const [characterName, setCharacterName] = useState('');
@@ -44,9 +45,14 @@ const Create = (props) => {
 
     const bttnstyle = {
         marginTop: '50px',
-        marginLeft: '250px',
+        marginBottom: '30px',
+        marginLeft: '130px',
         width: '70px',
         height: '40px'
+    }
+
+    const charnamestyle = {
+        marginLeft: '35%'
     }
 
     const handleSubmit = (e) => {
@@ -97,7 +103,7 @@ const Create = (props) => {
             <p style={parastyle}>Assign your character's traits</p>
             <div style={formstyle} className="wrapper">
             <form onSubmit={handleSubmit}>
-            <div className="characterName">
+            <div style={charnamestyle} className="characterName">
                 <label htmlFor="Character Name">Character's Name:</label>
                     <br />
                 <input style={inputstyle} value={characterName} onChange={(e) => setCharacterName(e.target.value)} type="text" name="Character Name" />
@@ -126,6 +132,9 @@ const Create = (props) => {
                     <option value='Wizard'>Wizard</option>
                 </select>
                 </div>
+                <label htmlFor="level">Level:</label>
+                <br />
+                <input type="number" style={inputstyle} name="level" id="" />
                 <div className="characterRace">
                 <label htmlFor="Character Race">Character Race:</label>
                     <br />
@@ -197,6 +206,7 @@ const Create = (props) => {
                 <br />
                 <input value={charisma} onChange={(e) => setCharisma(e.target.value)} style={inputstyle} type="number" name="charisma" />
                 </div>
+                <button onClick={Random} style={bttnstyle}>Random</button>
                 <button style={bttnstyle} type="submit">Submit</button>
             </form>
             </div>

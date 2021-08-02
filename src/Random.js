@@ -22,11 +22,11 @@ const Random = () => {
 
             // ? CLASSES
             let ranClass = Math.round((Math.random() * classeArr.length) - 0.5);
-            if (ranClass <= 0) {
-                ranClass = 0;
-            } else if (ranClass >= ranClass.length){
-                ranClass = classeArr.length;
-            } 
+            // if (ranClass <= 0) {
+            //     ranClass = 0;
+            // } else if (ranClass >= ranClass.length){
+            //     ranClass = classeArr.length;
+            // } 
 
             console.log(classeArr[ranClass])
 
@@ -37,6 +37,7 @@ const Random = () => {
             } else if (Race >= Race.length){
                 Race = racesArr.length;
             } 
+
 
             console.log(racesArr[Race])
 
@@ -59,19 +60,31 @@ const Random = () => {
 
             console.log(alignmentsArr[Alignment])
 
-            // characterName,
-            // playerName,
-            // // characterClass,
-            // level,
-            // // race,
-            // // background,
-            // // alignment,
-            // strength,
-            // dexterity,
-            // constitution,
-            // intelligence,
-            // wisdom,
-            // charisma,
+        // let strength = 12;
+        // let dexterity = 33;
+        // let constitution = 55;
+        // let intelligence = 55;
+        // let wisdom = 6;
+        // let charisma = 132;
+        // let properties = [strength, dexterity, constitution, intelligence, wisdom, charisma];
+        // for (let i = 0; i < properties.length; i++){
+        //     properties[i] = Math.round((Math.random() * 18) - 0.5);
+        //     if (properties[i] <= 0) {
+        //         properties[i] = 0;
+        //     } else if (properties[i] >= properties[i].length){
+        //         properties[i] = 18;
+        //     } 
+        //     console.log(properties[i])
+        //     // console.log(properties[1])
+        //     // setClassDrop(properties[1])
+        // }
+        let level;
+                level = Math.round((Math.random() * 20) - 0.5);
+            if (level <= 0) {
+                level = 0;
+            } else if (level >= 20){
+                level = 20;
+            } 
 
             // let Alignment = Math.round((Math.random() * AlignmentsArr.length) - 0.5);
             // if (Alignment <= 0) {
