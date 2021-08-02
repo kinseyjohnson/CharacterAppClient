@@ -5,8 +5,7 @@ import Login from './Login';
 
 
 const Signup = () => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [toggle, setToggle] = useState(false)
@@ -17,8 +16,7 @@ const Signup = () => {
     let clearInputs = () => {
         setEmail('');
         setPassword('');
-        setFirstName('');
-        setLastName('');
+        setUsername('');
     }
 
 
@@ -31,8 +29,7 @@ const Signup = () => {
                 user: {
                     email,
                     password,
-                    firstName,
-                    lastName
+                    username
                 }
             }),
             headers: new Headers({
@@ -59,26 +56,25 @@ const Signup = () => {
             <h1>Get Started</h1>
             <form onSubmit={handleSumbit}>
                 <input type="text" 
-                name='firstName' 
-                value={firstName} 
-                onChange={(e) => setFirstName(e.target.value)}
-                placeholder='First Name'/>
-                <input type="text" 
-                name='lastName' 
-                value={lastName} 
-                onChange={(e) => setLastName(e.target.value)} 
-                placeholder='Last Name'/>
+                name='username' 
+                value={username} 
+                onChange={(e) => setUsername(e.target.value)} 
+                placeholder='Username'
+                pattern='[\w]{4,}'/>
                 <input type="text" 
                 name='email' 
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)} 
                 placeholder={sayWarning}
-                className={toggle === true ? "warning" : null}/>
+                className={toggle === true ? "warning" : null}
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
                 <input type="password" 
                 name='password' 
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)} 
-                placeholder='Password'/>
+                placeholder='Password'
+                pattern="[a-zA-z0-9]{5,}"
+                title="At least 5 characters"/>
                 <button type="submit">Sign Up</button>
                 {/* <Router> */}
                     <Switch>
@@ -91,7 +87,7 @@ const Signup = () => {
                     </Switch>
                 {/* </Router> */}
             </form>
-        </div>
+        </div> 
     )
 }
 

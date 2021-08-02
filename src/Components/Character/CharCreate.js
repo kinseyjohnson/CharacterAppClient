@@ -59,7 +59,22 @@ const Create = (props) => {
         e.preventDefault();
         fetch('http://localhost:3000/character/create', {
             method: 'POST',
-            body: JSON.stringify({character: {characterName: characterName, playerName: playerName, characterClass: characterClass, level: level, race: race, background: background, alignment: alignment, strength: strength, dexterity: dexterity, constitution: constitution, intelligence: intelligence, wisdom: wisdom, charisma: charisma}}),
+            body: JSON.stringify({
+                character: {
+                    characterName: characterName, 
+                    playerName: playerName, 
+                    characterClass: characterClass, 
+                    level: level, 
+                    race: race, 
+                    background: background, 
+                    alignment: alignment, 
+                    strength: strength, 
+                    dexterity: dexterity, 
+                    constitution: constitution, 
+                    intelligence: intelligence, 
+                    wisdom: wisdom, 
+                    charisma: charisma
+                }}),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
