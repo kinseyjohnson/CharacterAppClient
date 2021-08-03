@@ -10,7 +10,7 @@ function Auth() {
         {/* <Link to="/register"> Sign up!</Link> */}
         <Route path="/Register" exact component={Signup} />
         {/* <Link to="/login"> Sign up!</Link> */}
-        <Route path="/login"  exact component={Login} />
+        <Route exact path="/login"> <Login /> </ Route>
       </div>
     </Router>
   );
