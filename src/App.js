@@ -2,13 +2,10 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Auth from './Components/Auth/Auth';
 import '../src/Components/Landing/landingpage.css'
-import data from './data.txt'
 // import Auth from './Components/Auth/Auth';
-import Random from './Random';
+import T from './T';
 // import Login from './Components/Auth/Sign-Log/Login'; 
 // import Signup from './Components/Auth/Sign-Log/Signup';
-// import Auth from './Components/Auth'
-// import { Route, BrowserRouter as Router} from 'react-router-dom';
 import Landing from './Components/Landing/LandingPage';
 // import Signup from './Components/Auth/Sign-Log/Signup';
 // import Login from './Components/Auth/Sign-Log/Login';
@@ -52,7 +49,6 @@ function App() {
 
   return (
     <div>
-      {/* <Router><Route path="/"><button onClick={Tog} className='button'>Start Here!</button></Route></Router> */}
       { toggle ? <Landing/> : <Auth/>}
       { toggle ? 
       <Router>
@@ -71,21 +67,13 @@ function App() {
       {/* {toggle ? <Auth/> : null} */}
       {/* <Signup style={{alignText: 'center'}}/>
       <Login style={{alignText: 'center'}}/> */}
-      <Random />
       <Test />
-      {/* <Auth /> */}
+      <T />
       <Create/>
-      {/* <Landing /> */}
-      {/* <Auth /> */}
-      {/* <button onClick={Tog}
-      className="button"
-      >Start Here!</button> */}
       {/* <Create/> */}
       {/* <Landing />
       <button onClick={Tog} className='button'>Start Here!</button>
       {toggle ? <Auth/> : null} */}
-      {/* <Signup style={{alignText: 'center'}}/> */}
-      {/* <Login style={{alignText: 'center'}}/> */}
       <Footer />
     </div>
   );
