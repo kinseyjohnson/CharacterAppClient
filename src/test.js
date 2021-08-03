@@ -19,6 +19,7 @@ const Test = () => {
     const [iintelligence, setIntelligence] = useState('');
     const [wwisdom, setWisdom] = useState('');
     const [ccharisma, setCharisma] = useState('');
+    const [level, setLevel] = useState('');
 
 
 let trying = () => {
@@ -43,11 +44,11 @@ let trying = () => {
 
         
     // }
-    for (let i = 0; i < parameterArr.length; i++){
+    for (let i = 0; i < 1; i++){
 
-        for (var j = 0; j < 1;  j++) {
+        for (var j = 0; j < 4;  j++) {
 
-            getParameterArr[j] =  Math.floor((Math.random() * parameterArr[i].length));
+            getParameterArr[j] =  Math.floor((Math.random() * parameterArr[j].length));
                 if (getParameterArr[j] <= 0) {
                     getParameterArr[j] = 0
                 } else if  (getParameterArr[j] >= parameterArr[i].length){
@@ -55,24 +56,30 @@ let trying = () => {
                     console.log(getParameterArr[j], '-----------------------------')
                 }
             // console.log(getParameterArr[j])
-            // let a = parameterArr[i]
-            // console.log(a[getParameterArr[j]],  parameterArr[i]);
-            let cls = parameterArr[i]
-            let race = parameterArr[i]
-            let chbgdr = parameterArr[i]
-            let alignmen = parameterArr[i]
+            // let a = parameterArr[j]
+            // console.log(a[getParameterArr[j]],  parameterArr[j]);
+            // console.log(a, parameterArr[j])
 
-            setClassDrop(cls[getParameterArr[j]])
-            setRaceDrop(race[getParameterArr[j]])
-            setCharacterBgDrop(chbgdr[getParameterArr[j]])
-            setAlignmentDrop(alignmen[getParameterArr[j]])
+
+            let cls = parameterArr[0]
+            let race = parameterArr[1]
+            let chbgdr = parameterArr[2]
+            let alignmen = parameterArr[3]
+
+            setClassDrop(cls[getParameterArr[0]])
+            setRaceDrop(race[getParameterArr[1]])
+            setCharacterBgDrop(chbgdr[getParameterArr[2]])
+            setAlignmentDrop(alignmen[getParameterArr[3]])
     
-            console.log(classDrop)
-            console.log(raceDrop)
-            console.log(characterBgDrop)
-            console.log(alignmentDrop)
+
         }
     }
+
+    console.log(classDrop)
+    console.log(raceDrop)
+    console.log(characterBgDrop)
+    console.log(alignmentDrop)
+
 
     // for (let j = 0; j < parameterArr.length; j++) {
     //     let getpar = Math.round((Math.random() * parameterArr[j].length));
@@ -159,8 +166,17 @@ let trying = () => {
             setCharisma(properties[5])
         }
 
-        // console.log(sstrength, ddexterity, cconstitution, iintelligence, wwisdom, ccharisma);
+        console.log(sstrength, ddexterity, cconstitution, iintelligence, wwisdom, ccharisma);
 
+        let lvl;
+        lvl = Math.round((Math.random() * 20) - 0.5);
+    if (lvl <= 0) {
+        lvl = 0;
+    } else if (lvl >= 20){
+        lvl = 20;
+    } 
+    setLevel(lvl)
+    console.log(level)
 
 
         // console.log(properties[strength])
