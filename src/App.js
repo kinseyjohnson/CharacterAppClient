@@ -15,6 +15,8 @@ import Landing from './Components/Landing/LandingPage';
 // import Auth from './Components/Auth/Auth'
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
+import Navigation from './Components/Nav/Navbar';
+
 
 function App() {
   const [toggle, setToggle] = useState(true);
@@ -29,8 +31,9 @@ function App() {
     // margin: "0 auto"}}
   return (
     <div>
+       <Navigation />
       {/* <Router><Route path="/"><button onClick={Tog} className='button'>Start Here!</button></Route></Router> */}
-      { toggle ? <Landing/> : <Auth/>}
+      {/* { toggle ? <Landing/> : <Auth/>}
       { toggle ? 
       <Router>
         <React.Fragment>
@@ -41,7 +44,7 @@ function App() {
           </Switch>
         </React.Fragment>
       </Router> 
-      : null}
+      : null} */}
       {/* <Login /> */}
       {/* {toggle ? <Auth/> : null} */}
       {/* <Signup style={{alignText: 'center'}}/>
@@ -57,6 +60,8 @@ function App() {
       {/* <Signup style={{alignText: 'center'}}/> */}
       {/* <Login style={{alignText: 'center'}}/> */}
       <Footer />
+
+      
     </div>
   );
 }

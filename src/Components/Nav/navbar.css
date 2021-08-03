@@ -1,0 +1,14 @@
+li {
+    list-style-type: none;
+    display: inline;
+    padding: 14px;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+div {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    overflow: hidden;
+}
