@@ -59,6 +59,10 @@ const Create = (props) => {
         e.preventDefault();
         fetch('http://localhost:3000/character/create', {
             method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': `SECRET ${props.token}`
+            }),
             body: JSON.stringify({
                 character: {
                     characterName: characterName, 
@@ -75,13 +79,9 @@ const Create = (props) => {
                     wisdom: wisdom, 
                     charisma: charisma
                 }}),
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Authorization': props.token
-            })
         }).then((res) => res.json())
         .then((characterData) => {
-            console.log(characterData);
+            console.log(characterData.playerName);
             setCharacterName('');
             setPlayerName('');
             setCharacterClass('');

@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import Login from './Login';
 
 
-const Signup = () => {
+const Signup = (props) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -21,6 +21,7 @@ const Signup = () => {
 
 
     let handleSumbit = (e) => {
+        console.log(props)
         e.preventDefault();
         // const url = 'http://localhost:3000/user/register';
         fetch('http://localhost:3000/user/register', {
@@ -33,11 +34,12 @@ const Signup = () => {
                 }
             }),
             headers: new Headers({
-                "Content-Type": 'application/json'
+                'Content-Type': 'application/json'
             })
         })
         .then(res => res.json())
         .then((data) => {
+            props.updateToken(data.sessionToken)
             console.log(data)
             console.log(data.sessionToken)
             if (data.sessionToken === undefined){
