@@ -67,8 +67,8 @@ function App() {
       {/* {toggle ? <Auth/> : null} */}
       {/* <Signup style={{alignText: 'center'}}/>
       <Login style={{alignText: 'center'}}/> */}
-      <Test />
-      <T />
+      {/* <Test />
+      <T /> */}
       <Create/>
       {/* <Create/> */}
       {/* <Landing />
