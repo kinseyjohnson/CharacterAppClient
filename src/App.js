@@ -14,6 +14,10 @@ import Landing from './Components/Landing/LandingPage';
 // import Create from './Components/Character/CharCreate';
 // import Auth from './Components/Auth/Auth'
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
+import Footer from './Components/Footer/Footer';
+import Navigation from './Components/Nav/Navbar';
+import Create from './Components/Character/CharCreate';
+
 
 function App() {
   const [toggle, setToggle] = useState(true);
@@ -26,28 +30,40 @@ function App() {
     }
   }, [])
 
-  const updateToken = (newToken) => {
-    localStorage.setItem('token', newToken);
-    setSessionToken(newToken);
-    console.log(newToken);
+  const updateLocalStorage = newToken => {
+    localStorage.setItem("sessionToken", newToken)
+    setSessionToken(newToken)
+    console.log(newToken)
   }
+
+  // const updateToken = (newToken) => {
+  //   localStorage.setItem('token', newToken);
+  //   setSessionToken(newToken);
+  //   console.log(newToken);
+  // }
 
   const clearToken = () => {
     localStorage.clear();
     setSessionToken('');
   }
 
-
   // const protectedViews = () => {
-  //   return (sessionToken === localStorage.getItem('token') ? <WorkoutIndex token={sessionToken}/>
-    // : <Auth updateToken={updateToken}/>)
+  //   if(sessionToken !== undefined) {
+  //     return(
+  //     <Create sessionToken={sessionToken}/>
+  //     )
+  //   } else {
+  //     <Landing/>
+  //   }
+    
+  // }
 
-    // style={{width: "1200px",
-    // margin: "0 auto"}}
   return (
     <div>
+      <Navigation />
+      {/* {protectedViews()} */}
       {/* <Router><Route path="/"><button onClick={Tog} className='button'>Start Here!</button></Route></Router> */}
-      { toggle ? <Landing/> : <Auth updateToken={updateToken} token={sessionToken} />}
+      {/* { toggle ? <Landing/> : <Auth updateToken={updateToken} token={sessionToken} />}
       { toggle ? 
       <Router>
         <React.Fragment>
@@ -58,7 +74,7 @@ function App() {
           </Switch>
         </React.Fragment>
       </Router> 
-      : null}
+      : null} */}
       {/* <Login /> */}
       {/* {toggle ? <Auth/> : null} */}
       {/* <Signup style={{alignText: 'center'}}/>
@@ -73,6 +89,7 @@ function App() {
       >Start Here!</button> */}
       {/* <Signup style={{alignText: 'center'}}/> */}
       {/* <Login style={{alignText: 'center'}}/> */}
+      <Footer />
     </div>
   );
 }
