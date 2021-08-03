@@ -21,7 +21,7 @@ const Signup = (props) => {
 
 
     let handleSumbit = (e) => {
-        console.log(props)
+        console.log(props, '++++++++++++++++++++')
         e.preventDefault();
         // const url = 'http://localhost:3000/user/register';
         fetch('http://localhost:3000/user/register', {
@@ -41,7 +41,7 @@ const Signup = (props) => {
         .then((data) => {
             props.updateToken(data.sessionToken)
             console.log(data)
-            console.log(data.sessionToken)
+            console.log(data.sessionToken, '++++++++++++++++')
             if (data.sessionToken === undefined){
                 setToggle(true);
                 setSayWarning('This email address is already used')
@@ -62,14 +62,16 @@ const Signup = (props) => {
                 value={username} 
                 onChange={(e) => setUsername(e.target.value)} 
                 placeholder='Username'
-                pattern='[\w]{4,}'/>
+                pattern='[\w]{4,}'
+                title='At least 4 character and one number or special symbol'/>
                 <input type="text" 
                 name='email' 
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)} 
                 placeholder={sayWarning}
                 className={toggle === true ? "warning" : null}
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                title="It mast be email"/> 
                 <input type="password" 
                 name='password' 
                 value={password} 
