@@ -1,18 +1,28 @@
 import React from 'react';
-import { Route, BrowserRouter as Router, Link} from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 import Signup from './Sign-Log/Signup';
-import Login from './Sign-Log/Login';
+import Login from './Sign-Log/Login'
 
-function Auth() {
+function Auth(props) {
+  function fak (){
+    console.log(props.updateToken);
+
+  }
   return (
-    <Router>
-      <div className="Auth">
-        {/* <Link to="/register"> Sign up!</Link> */}
-        <Route exact path="/register"><Signup /></ Route>
-        {/* <Link to="/login"> Sign up!</Link> */}
-        <Route exact path="/login"> <Login /> </ Route>
-      </div>
+    <div>
+      <button onClick={fak}>fak</button>
+          <Router>
+      <Switch>
+        <div className="Auth">
+          {/* <Link to="/register"> Sign up!</Link> */}
+          <Route path="/register" ><Signup updateToken={props.updateToken} token={props.token} /></Route>
+          {/* <Link to="/login"> Sign up!</Link> */}
+          <Route path="/login"><Login updateToken={props.updateToken} token={props.token} /></Route>
+        </div>
+      </Switch>
     </Router>
+    </div>
+
   );
 }
 

@@ -1,30 +1,34 @@
 import React, { useState } from 'react';
 import './charcreate.css'
 
-import T from '../../T';
+// import T from '../../T';
 
 const Create = (props) => {
     const [characterName, setCharacterName] = useState('');
     const [playerName, setPlayerName] = useState('');
-    const [characterClass, setCharacterClass] = useState('');//
-    const [race, setRace] = useState('');//
+    const [characterClass, setCharacterClass] = useState('');
+    const [race, setRace] = useState('');
 
-    const [background, setBackground] = useState('');//
-    const [alignment, setAlignment] = useState('');//
+    const [background, setBackground] = useState('');
+    const [alignment, setAlignment] = useState('');
 
-    const [level, setLevel] = useState('');//
-    const [strength, setStrength] = useState('');//
-    const [dexterity, setDexterity] = useState('');//
-    const [constitution, setConstitution] = useState('');//
-    const [intelligence, setIntelligence] = useState('');//
-    const [wisdom, setWisdom] = useState('');//
-    const [charisma, setCharisma] = useState('');//
+    const [level, setLevel] = useState('');
+    const [strength, setStrength] = useState('');
+    const [dexterity, setDexterity] = useState('');
+    const [constitution, setConstitution] = useState('');
+    const [intelligence, setIntelligence] = useState('');
+    const [wisdom, setWisdom] = useState('');
+    const [charisma, setCharisma] = useState('');
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         fetch('http://localhost:3000/character/create', {
             method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': `SECRET ${props.token}`
+            }),
             body: JSON.stringify({
                 character: {
                     characterName: characterName, 
@@ -41,13 +45,9 @@ const Create = (props) => {
                     wisdom: wisdom, 
                     charisma: charisma
                 }}),
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Authorization': props.token
-            })
         }).then((res) => res.json())
         .then((characterData) => {
-            console.log(characterData);
+            console.log(characterData.playerName);
             setCharacterName('');
             setPlayerName('');
             setCharacterClass('');
@@ -67,26 +67,6 @@ const Create = (props) => {
 
 
 // !!!!!!!!!!!!!!!!!!!!!!! SOME RANDOM START !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-    // const [classDrop, setClassDrop] = useState('');//
-    // const [raceDrop, setRaceDrop] = useState('');//
-    // const [characterBgDrop, setCharacterBgDrop] = useState('');//
-    // const [alignmentDrop, setAlignmentDrop] = useState('');//
-
-
-    // const [background, setBackground] = useState('');
-    // const [alignment, setAlignment] = useState('');
-
-    // const [strength, setStrength] = useState('');
-    // const [dexterity, setDexterity] = useState('');
-    // const [constitution, setConstitution] = useState('');
-    // const [intelligence, setIntelligence] = useState('');
-    // const [wisdom, setWisdom] = useState('');
-    // const [charisma, setCharisma] = useState('');
-    // const [level, setLevel] = useState('');
-    // const [nam, setNam] = useState ('');
-
 
     const F = (e) =>{
         fetch( 'http://localhost:3000/character/create' )

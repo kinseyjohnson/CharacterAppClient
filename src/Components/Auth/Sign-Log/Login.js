@@ -13,6 +13,7 @@ const Login = (props) => {
 // const [login, setLogin] = useState(true);
 
     const handleSubmit = (event) => {
+        console.log(props)
         event.preventDefault();
         fetch('http://localhost:3000/user/login', {
             method: "POST",
@@ -33,6 +34,7 @@ const Login = (props) => {
                 if (data.sessionToken === undefined){
                     setNewToggle(!newToggle)
                 }
+                props.updateToken(data.sessionToken)
                 console.log(data.sessionToken);
                 console.log(data)
             })

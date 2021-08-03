@@ -1,38 +1,37 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Auth from './Components/Auth/Auth';
 import '../src/Components/Landing/landingpage.css'
-// import Auth from './Components/Auth/Auth';
-import T from './T';
 // import Login from './Components/Auth/Sign-Log/Login'; 
 // import Signup from './Components/Auth/Sign-Log/Signup';
 import Landing from './Components/Landing/LandingPage';
 // import Signup from './Components/Auth/Sign-Log/Signup';
 // import Login from './Components/Auth/Sign-Log/Login';
 import Create from './Components/Character/CharCreate';
+import Footer from './Components/Footer/Footer'
 // import Auth from './Components/Auth/Auth'
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
-import Footer from './Components/Footer/Footer'
-import Test from './Test.js';
 
 function App() {
   const [toggle, setToggle] = useState(true);
-  const Tog = () => setToggle(!toggle)
+  const Tog = () => setToggle(!toggle);
 
 
-  // const [sessionToken, setSessionToken] = useState('');
+  
+  const [sessionToken, setSessionToken] = useState('');
 
-  // useEffect(() => {
-  //   if (localStorage.getItem('token')){
-  //     setSessionToken(localStorage.getItem('token'));
-  //   }
-  // }, [])
 
-  // const updateToken = (newToken) => {
-  //   localStorage.setItem('token', newToken);
-  //   setSessionToken(newToken)
-  //   console.log(sessionToken);
-  // }
+  useEffect(() => {
+    if (localStorage.getItem('token')){
+      setSessionToken(localStorage.getItem('token'));
+    }
+  }, [])
+
+  const updateToken = (newToken) => {
+    localStorage.setItem('token', newToken);
+    setSessionToken(newToken);
+    console.log(newToken , '-----------');
+  }
 
   // const clearToken = () => {
   //   localStorage.clear();
@@ -46,19 +45,17 @@ function App() {
 
     // style={{width: "1200px",
     // margin: "0 auto"}}
-
   return (
     <div>
-      { toggle ? <Landing/> : <Auth/>}
+      {/* <Router><Route path="/"><button onClick={Tog} className='button'>Start Here!</button></Route></Router> */}
+      { toggle ? <Landing/> : <Auth updateToken={updateToken} token={sessionToken} />}
       { toggle ? 
       <Router>
         <React.Fragment>
           <Switch>
-            <div className="landingpage-btn">            
-              <Link to="/login" className="landingpage-link">
+            <Link to="/login">
               <button onClick={Tog} className='button'>Start Here!</button>
-              </Link>
-            </div>
+            </Link>
           </Switch>
         </React.Fragment>
       </Router> 
@@ -69,7 +66,7 @@ function App() {
       <Login style={{alignText: 'center'}}/> */}
       {/* <Test />
       <T /> */}
-      <Create/>
+      <Create token={sessionToken}/>
       {/* <Create/> */}
       {/* <Landing />
       <button onClick={Tog} className='button'>Start Here!</button>
