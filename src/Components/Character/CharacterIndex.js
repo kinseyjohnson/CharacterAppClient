@@ -15,7 +15,7 @@ const CharacterIndex = (props) => {
   
   const fetchCharacters = () => {
       console.log(sessionToken);
-    fetch(`http://localhost:3000/character/1`, {
+    fetch(`http://localhost:3000/character/usercharacters`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const CharacterIndex = (props) => {
 
   useEffect (() => {
     fetchCharacters()
-  }, [characters])
+  }, [])
 
   const editUpdateCharacter = (character) => {
     setCharacterToUpdate(character);
