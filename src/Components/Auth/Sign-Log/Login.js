@@ -8,6 +8,7 @@ import { Context } from '../../../Context';
 
 const Login = (props) => {
     const {updateName} = useContext(Context);
+    const {updateToken} = useContext(Context);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -37,7 +38,7 @@ const Login = (props) => {
                 if (data.sessionToken === undefined){
                     setNewToggle(!newToggle)
                 }
-                props.updateToken(data.sessionToken)
+                updateToken(data.sessionToken)
                 console.log(data.sessionToken);
                 console.log(data)
             })

@@ -9,12 +9,12 @@ import '../src/Components/Landing/landingpage.css'
 // import Signup from './Components/Auth/Sign-Log/Signup';
 // import Auth from './Components/Auth'
 // import { Route, BrowserRouter as Router} from 'react-router-dom';
-import Landing from './Components/Landing/LandingPage';
+// import Landing from './Components/Landing/LandingPage';
 // import Signup from './Components/Auth/Sign-Log/Signup';
 // import Login from './Components/Auth/Sign-Log/Login';
 // import Create from './Components/Character/CharCreate';
 // import Auth from './Components/Auth/Auth'
-import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
+// import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
 import Navigation from './Components/Nav/Navbar';
 
@@ -66,47 +66,16 @@ function App() {
     // style={{width: "1200px",
     // margin: "0 auto"}}
 
-  return (
-    <Context.Provider value={{
-      updateName, username
-    }}>
-    <div>
-       <Navigation />
-      {/* <Router><Route path="/"><button onClick={Tog} className='button'>Start Here!</button></Route></Router> */}
-      {/* { toggle ? <Landing/> : <Auth/>}
-      { toggle ? 
-      <Router>
-        <React.Fragment>
-          <Switch>
-            <div className='landingpage-btn'>
-            <Link to="/login" className="landingpage-link">
-              <button onClick={Tog} className='button'>Start Here!</button>
-            </Link>
-            </div>
-          </Switch>
-        </React.Fragment>
-      </Router> 
-      : null} */}
-      {/* <Login /> */}
-      {/* {toggle ? <Auth/> : null} */}
-      {/* <Signup style={{alignText: 'center'}}/>
-      <Login style={{alignText: 'center'}}/> */}
-      {/* <Random /> */}
-      {/* <Auth /> */}
-      {/* <Create/> */}
-      {/* <Landing /> */}
-      {/* <Auth /> */}
-      {/* <button onClick={Tog}
-      className="button"
-      >Start Here!</button> */}
-      {/* <Signup style={{alignText: 'center'}}/> */}
-      {/* <Login style={{alignText: 'center'}}/> */}
-      <Footer />
-
-      
-    </div>
-    </Context.Provider>
-  );
+    return (
+      <Context.Provider value={{
+        updateName, updateToken, username, sessionToken
+      }}>
+      <div>
+        <Navigation/>
+        <Footer />
+      </div>
+      </Context.Provider>
+    );
 }
 
 export default App;
