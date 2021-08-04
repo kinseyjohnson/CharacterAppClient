@@ -6,7 +6,7 @@ const Landing = () => {
   const [toggle, setToggle] = useState(false);
   const Tog = () => setToggle(!toggle);
   return (
-    <div className="mainDiv">
+    <div className="lending-inner">
       <h1 className="h2">Welcome to the Tavern of the Azure Keys!</h1>
       <p className="p">
         Here you can create and store characters for your upcoming TRPG games,
@@ -26,6 +26,7 @@ const Landing = () => {
         </React.Fragment>
       </Router>
     </div>
+    
   );
 };
 export default Landing;

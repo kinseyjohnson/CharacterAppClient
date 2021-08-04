@@ -4,6 +4,7 @@ import { Context } from '../../Context';
 
 const Create = (props) => {
     const {username} = useContext(Context)
+    const {sessionToken} = useContext(Context)
     const [characterName, setCharacterName] = useState('');
     const [playerName, setPlayerName] = useState('');
     const [characterClass, setCharacterClass] = useState('');
@@ -23,7 +24,7 @@ const Create = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:4000/character/create", {
+    fetch("http://localhost:3000/character/create", {
       method: "POST",
       body: JSON.stringify({
         character: {
@@ -44,12 +45,12 @@ const Create = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: props.token,
+        "Authorization": `SECRET ${sessionToken}`,
       }),
     })
       .then((res) => res.json())
       .then((characterData) => {
-        console.log(characterData);
+        console.log(characterData, 'yeeeeeeeeee');
         setCharacterName("");
         setPlayerName("");
         setCharacterClass("");
@@ -70,7 +71,7 @@ const Create = (props) => {
 
 // !!!!!!!!!!!!!!!!!!!!!!! SOME RANDOM START !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    const F = (e) =>{
+    const randomPropertiesFetch = (e) =>{
         fetch( 'http://localhost:3000/character/create' )
         .then( res => res.json() )
         .then( json => {
@@ -458,8 +459,8 @@ const Create = (props) => {
                 type="number" 
                 name="charisma" />
                 </div>
-                <button type="button" onClick={F} className="bttnstyle">T</button>
-                <button className="bttnstyle" type="submit">Submit</button>
+                <button type="button" onClick={randomPropertiesFetch} className="bttnstyle">Random</button>
+                <button className="bttnstyle" onClick={handleSubmit} type="submit">Submit</button>
             </form>
             </div>
         </div>

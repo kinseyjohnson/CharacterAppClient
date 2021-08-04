@@ -8,13 +8,13 @@ import {
 } from "react-router-dom";
 import Login from "../Auth/Sign-Log/Login";
 import Register from "../Auth/Sign-Log/Signup";
-import CreateChar from "../Character/CharCreate";
+import Create from "../Character/CharCreate";
 import Landing from "../Landing/LandingPage";
 // import CharTable from "../Character/CharacterTable";
 import CharacterIndex from '../Character/CharacterIndex';
 import "./navbar.css";
 
-export default function Navigation() {
+export default function Navigation(props) {
   return (
     <Router>
       <ul>
@@ -22,7 +22,7 @@ export default function Navigation() {
           <NavLink
             style={{ textDecoration: "none", color: "White" }}
             to="/"
-            activeClassName="main-nav-active"
+            // activeClassName="main-nav-active"
           >
             Home
           </NavLink>
@@ -79,7 +79,7 @@ export default function Navigation() {
           <Register />
         </Route>
         <Route path="/create">
-          <CreateChar />
+          <Create token={props.token} />
         </Route>
         <Route path="/account">
           <CharacterIndex />

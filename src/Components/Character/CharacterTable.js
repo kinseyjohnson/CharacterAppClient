@@ -2,17 +2,19 @@ import React from "react";
 import { Table, Button } from "reactstrap";
 
 const CharacterTable = (props) => {
+  console.log(props, '===================');
   const deleteCharacter = (character) => {
     fetch(`http://localhost:3000/character/${character.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: `SECRET ${props.token}`,
+        "Authorization": `SECRET ${props.token}`,
       }),
     }).then(() => props.fetchCharacters());
   };
 
   const characterMapper = () => {
+    console.log(props, '++++++++++++++++++++++++++')
     return props.characters.map((character, index) => {
       return (
         <tr key={index}>

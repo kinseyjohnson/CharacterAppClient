@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Auth from './Components/Auth/Auth';
 import '../src/Components/Landing/landingpage.css'
+
 // import Auth from './Components/Auth/Auth';
 // import Random from './Random';
 // import Login from './Components/Auth/Sign-Log/Login'; 
@@ -70,7 +71,7 @@ function App() {
         updateName, updateToken, username, sessionToken
       }}>
       <div>
-        <Navigation/>
+        <Navigation token={sessionToken}/>
         <Footer />
       </div>
       </Context.Provider>
