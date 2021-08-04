@@ -20,7 +20,7 @@ export default function Navigation() {
         <li>
           <NavLink
             style={{ textDecoration: "none", color: "White" }}
-            to="/home"
+            to="/"
           >
             Home
           </NavLink>
@@ -64,7 +64,7 @@ export default function Navigation() {
       <hr />
 
       <Switch>
-        <Route exact path="/home">
+        <Route exact path="/">
           <Landing />
         </Route>
         <Route path="/login">
