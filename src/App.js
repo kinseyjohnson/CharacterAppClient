@@ -2,15 +2,12 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import Auth from './Components/Auth/Auth';
 import '../src/Components/Landing/landingpage.css'
-// import Login from './Components/Auth/Sign-Log/Login'; 
-// import Signup from './Components/Auth/Sign-Log/Signup';
 import Landing from './Components/Landing/LandingPage';
-// import Signup from './Components/Auth/Sign-Log/Signup';
-// import Login from './Components/Auth/Sign-Log/Login';
 import Create from './Components/Character/CharCreate';
 import Footer from './Components/Footer/Footer'
-// import Auth from './Components/Auth/Auth'
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
+import { Context } from './Context';
+import Navigation from './Components/Nav/Navbar';
 
 function App() {
   const [toggle, setToggle] = useState(true);
@@ -19,6 +16,8 @@ function App() {
 
   
   const [sessionToken, setSessionToken] = useState('');
+  const [username, setUsername] = useState('');
+
 
 
   useEffect(() => {
@@ -33,6 +32,15 @@ function App() {
     console.log(newToken , '-----------');
   }
 
+  
+  const updateName = (newName) => {
+    // if (!username){
+
+    // }
+    setUsername(newName);
+    console.log(newName , '-----------');
+  }
+
   // const clearToken = () => {
   //   localStorage.clear();
   //   setSessionToken('');
@@ -45,34 +53,16 @@ function App() {
 
     // style={{width: "1200px",
     // margin: "0 auto"}}
+
   return (
+    <Context.Provider value={{
+      updateName, username
+    }}>
     <div>
-      {/* <Router><Route path="/"><button onClick={Tog} className='button'>Start Here!</button></Route></Router> */}
-      { toggle ? <Landing/> : <Auth updateToken={updateToken} token={sessionToken} />}
-      { toggle ? 
-      <Router>
-        <React.Fragment>
-          <Switch>
-            <Link to="/login">
-              <button onClick={Tog} className='button'>Start Here!</button>
-            </Link>
-          </Switch>
-        </React.Fragment>
-      </Router> 
-      : null}
-      {/* <Login /> */}
-      {/* {toggle ? <Auth/> : null} */}
-      {/* <Signup style={{alignText: 'center'}}/>
-      <Login style={{alignText: 'center'}}/> */}
-      {/* <Test />
-      <T /> */}
-      <Create token={sessionToken}/>
-      {/* <Create/> */}
-      {/* <Landing />
-      <button onClick={Tog} className='button'>Start Here!</button>
-      {toggle ? <Auth/> : null} */}
+      <Navigation/>
       <Footer />
     </div>
+    </Context.Provider>
   );
 }
 
