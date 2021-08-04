@@ -15,7 +15,7 @@ const CharacterIndex = (props) => {
   
   const fetchCharacters = () => {
       console.log(sessionToken);
-    fetch(`http://localhost:3000/character/1`, {
+    fetch(`http://localhost:3000/character/`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

@@ -29,6 +29,7 @@ const CharacterTable = (props) => {
             </Button>{" "}
             <Button
               style={{ backgroundColor: "grey", margin: "3px" }}
+              onClick={() => {deleteCharacter(character)}}
               size="sm"
             >
               Delete
