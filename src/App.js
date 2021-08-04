@@ -11,7 +11,8 @@ import Create from './Components/Character/CharCreate';
 import Footer from './Components/Footer/Footer'
 // import Auth from './Components/Auth/Auth'
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
-import Navigation from './Components/Nav/Navbar'
+
+import { Context } from './Context';
 
 function App() {
   const [toggle, setToggle] = useState(true);
@@ -20,6 +21,8 @@ function App() {
 
   
   const [sessionToken, setSessionToken] = useState('');
+  const [username, setUsername] = useState('');
+
 
 
   useEffect(() => {
@@ -34,48 +37,62 @@ function App() {
     console.log(newToken , '-----------');
   }
 
+  
+  const updateName = (newName) => {
+    // if (!username){
+
+    // }
+    setUsername(newName);
+    console.log(newName , '-----------');
+  }
+
   // const clearToken = () => {
   //   localStorage.clear();
   //   setSessionToken('');
   // }
 
 
-  const viewConductor = () => {
-    return (sessionToken === localStorage.getItem('token')
-    ? <Create token={sessionToken}/> : <Auth updateToken={updateToken}/>)}
+  // const protectedViews = () => {
+  //   return (sessionToken === localStorage.getItem('token') ? <WorkoutIndex token={sessionToken}/>
+    // : <Auth updateToken={updateToken}/>)
 
     // style={{width: "1200px",
     // margin: "0 auto"}}
+
   return (
+    <Context.Provider value={{
+      updateName, username
+    }}>
     <div>
-      <Navigation/>
-      {/* <Landing/> */}
       {/* <Router><Route path="/"><button onClick={Tog} className='button'>Start Here!</button></Route></Router> */}
-      {/* { toggle ? <Landing/> : <Auth updateToken={updateToken} token={sessionToken} />}
+      { toggle ? <Landing/> : <Auth updateToken={updateToken} token={sessionToken} />}
       { toggle ? 
       <Router>
         <React.Fragment>
           <Switch>
-            <Link to="/login">
+            <div className='landingpage-btn'>
+            <Link to="/login" className="landingpage-link">
               <button onClick={Tog} className='button'>Start Here!</button>
             </Link>
+            </div>
           </Switch>
         </React.Fragment>
       </Router> 
-      : null} */}
+      : null}
       {/* <Login /> */}
       {/* {toggle ? <Auth/> : null} */}
       {/* <Signup style={{alignText: 'center'}}/>
       <Login style={{alignText: 'center'}}/> */}
       {/* <Test />
       <T /> */}
-      {/* <Create token={sessionToken}/> */}
+      <Create token={sessionToken}/>
       {/* <Create/> */}
       {/* <Landing />
       <button onClick={Tog} className='button'>Start Here!</button>
       {toggle ? <Auth/> : null} */}
       <Footer />
     </div>
+    </Context.Provider>
   );
 }
 

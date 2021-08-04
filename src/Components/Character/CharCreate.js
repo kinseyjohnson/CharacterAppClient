@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './charcreate.css'
 
-// import T from '../../T';
 
 const Create = (props) => {
     const [characterName, setCharacterName] = useState('');
@@ -452,6 +451,5 @@ const Create = (props) => {
         </div>
     )
 }
-
 
 export default Create;

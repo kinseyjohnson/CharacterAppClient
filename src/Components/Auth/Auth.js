@@ -4,10 +4,6 @@ import Signup from './Sign-Log/Signup';
 import Login from './Sign-Log/Login'
 
 function Auth(props) {
-  function fak (){
-    console.log(props.updateToken);
-
-  }
   return (
     <div>
           <Router>

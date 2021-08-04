@@ -3,68 +3,87 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  NavLink,
 } from "react-router-dom";
-import Login from '../Auth/Sign-Log/Login';
-import Register from '../Auth/Sign-Log/Signup';
-import Account from '../Account/Account';
-import CreateChar from '../Character/CharCreate';
-import Landing from '../Landing/LandingPage';
-import './navbar.css';
+import Login from "../Auth/Sign-Log/Login";
+import Register from "../Auth/Sign-Log/Signup";
+import CreateChar from "../Character/CharCreate";
+import Landing from "../Landing/LandingPage";
+import CharTable from "../Character/CharacterTable";
+import "./navbar.css";
 
 export default function Navigation() {
   return (
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link  to="/landing">Home</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-          <Link to="/create">Create Characters</Link>
-          </li>
-          <li>
-          <Link to="/account">My Account</Link>
-          </li>
-        </ul>
+      <ul>
+        <li>
+          <NavLink
+            style={{ textDecoration: "none", color: "White" }}
+            to="/home"
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            style={{ textDecoration: "none", color: "White" }}
+            to="/login"
+          >
+            Login
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            style={{ textDecoration: "none", color: "White" }}
+            to="/register"
+            className="main-nav"
+            activeClassName="main-nav-active"
+          >
+            Register
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            style={{ textDecoration: "none", color: "White" }}
+            to="/create"
+          >
+            Create
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            style={{ textDecoration: "none", color: "White" }}
+            to="/account"
+          >
+            My Account
+          </NavLink>
+        </li>
+      </ul>
 
-        <hr />
+      <hr />
 
-        <Switch>
-          <Route exact path="/landing">
-            <Landing />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/create">
-            <CreateChar />
-          </Route>
-          <Route path="/account">
-            <Account />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/home">
+          <Landing />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route path="/create">
+          <CreateChar />
+        </Route>
+        <Route path="/account">
+          <CharTable />
+        </Route>
+      </Switch>
     </Router>
-  );
-};
-
-function Home() {
-  return (
-    <div>
-    </div>
   );
 }
 
-
-
-
+function Home() {
+  return <div></div>;
+}

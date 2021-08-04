@@ -1,5 +1,13 @@
-li {
+ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+  }
+
+
+li {
     display: inline;
     padding: 14px;
     float: left;
@@ -7,8 +15,6 @@ li {
     font-weight: bold;
 }
 
-div {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    overflow: hidden;
+.main-nav-active {
+    background-color: orange;
 }
