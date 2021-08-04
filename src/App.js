@@ -49,7 +49,6 @@ function App() {
   return (
     <div>
       <Navigation/>
-      {viewConductor()}
       {/* <Landing/> */}
       {/* <Router><Route path="/"><button onClick={Tog} className='button'>Start Here!</button></Route></Router> */}
       {/* { toggle ? <Landing/> : <Auth updateToken={updateToken} token={sessionToken} />}
