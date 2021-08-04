@@ -10,7 +10,8 @@ import Login from "../Auth/Sign-Log/Login";
 import Register from "../Auth/Sign-Log/Signup";
 import CreateChar from "../Character/CharCreate";
 import Landing from "../Landing/LandingPage";
-import CharTable from "../Character/CharacterTable";
+// import CharTable from "../Character/CharacterTable";
+import CharacterIndex from '../Character/CharacterIndex';
 import "./navbar.css";
 
 export default function Navigation() {
@@ -20,7 +21,8 @@ export default function Navigation() {
         <li>
           <NavLink
             style={{ textDecoration: "none", color: "White" }}
-            to="/home"
+            to="/"
+            activeClassName="main-nav-active"
           >
             Home
           </NavLink>
@@ -29,6 +31,7 @@ export default function Navigation() {
           <NavLink
             style={{ textDecoration: "none", color: "White" }}
             to="/login"
+            activeClassName="main-nav-active"
           >
             Login
           </NavLink>
@@ -47,6 +50,7 @@ export default function Navigation() {
           <NavLink
             style={{ textDecoration: "none", color: "White" }}
             to="/create"
+            activeClassName="main-nav-active"
           >
             Create
           </NavLink>
@@ -55,6 +59,7 @@ export default function Navigation() {
           <NavLink
             style={{ textDecoration: "none", color: "White" }}
             to="/account"
+            activeClassName="main-nav-active"
           >
             My Account
           </NavLink>
@@ -64,7 +69,7 @@ export default function Navigation() {
       <hr />
 
       <Switch>
-        <Route exact path="/home">
+        <Route exact path="/">
           <Landing />
         </Route>
         <Route path="/login">
@@ -77,7 +82,7 @@ export default function Navigation() {
           <CreateChar />
         </Route>
         <Route path="/account">
-          <CharTable />
+          <CharacterIndex />
         </Route>
       </Switch>
     </Router>

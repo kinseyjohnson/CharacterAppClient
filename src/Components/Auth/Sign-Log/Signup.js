@@ -1,10 +1,13 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import './sign-log.css';
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import Login from './Login';
+import { Context } from "../../../Context";
 
 
 const Signup = (props) => {
+    const {updateName} = useContext(Context);
+    const {updateToken} = useContext(Context);
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -39,9 +42,11 @@ const Signup = (props) => {
         })
         .then(res => res.json())
         .then((data) => {
-            props.updateToken(data.sessionToken)
-            console.log(data)
-            console.log(data.sessionToken, '++++++++++++++++')
+            console.log(data.user.username)
+            updateName(data.user.username)
+            updateToken(data.sessionToken)
+            // console.log(data)
+            // console.log(data.sessionToken, '++++++++++++++++')
             if (data.sessionToken === undefined){
                 setToggle(true);
                 setSayWarning('This email address is already used')

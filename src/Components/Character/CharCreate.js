@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './charcreate.css'
-
-// import T from '../../T';
+import { Context } from '../../Context';
 
 const Create = (props) => {
+    const {username} = useContext(Context)
     const [characterName, setCharacterName] = useState('');
     const [playerName, setPlayerName] = useState('');
     const [characterClass, setCharacterClass] = useState('');
@@ -87,6 +87,8 @@ const Create = (props) => {
             const gnome = getJson.gnome;
             const elf = getJson.elf;
             const dwarf = getJson.dwarf;
+            const tiefling = getJson.tiefling;
+            const dragonborn = getJson.dragonborn;
         
             const parameterArr = [ classeArr, racesArr, CharBgsArr, alignmentsArr ];
 
@@ -101,8 +103,10 @@ const Create = (props) => {
             runCharachter(getParameterArr, parameterArr)
             runStats()
             runLevel()
-            names(orc, human, halfling, gnome, elf, dwarf)
+            names( orc, human, halfling, gnome, elf, dwarf, tiefling, dragonborn )
             })
+
+
             // * 1 CHARACHTER FUNCTION
             function runCharachter(getParameterArr, parameterArr) {
 
@@ -121,7 +125,7 @@ const Create = (props) => {
                     let race = parameterArr[1]
                     let chbgdr = parameterArr[2]
                     let alignmen = parameterArr[3]
-        
+                    
                     setCharacterClass( cls[getParameterArr[0]] )
                     setRace( race[getParameterArr[1]] )
                     setBackground( chbgdr[getParameterArr[2]] )
@@ -169,6 +173,7 @@ const Create = (props) => {
 
             }
 
+
             // * 3 LEVEL FUNCTION
             function runLevel() {
                 let lvl;
@@ -183,8 +188,10 @@ const Create = (props) => {
                 setLevel( lvl )
                 console.log('LVL ' , level )
             }
+
+            
         // * 4 RACE FUNCTION
-            function names(dwarf, human, elf, gnome, halfling, orc){
+            function names( dwarf, human, elf, gnome, halfling, orc, tiefling, dragonborn ){
                 let funcName;
                 switch (race) {
                     case 'Dwarf':
@@ -232,15 +239,15 @@ const Create = (props) => {
                         setCharacterName(human[funcName])
                         break;
                     case 'Dragonborn': 
-                        funcName = Math.floor((Math.random() * dwarf.length));
+                        funcName = Math.floor((Math.random() * dragonborn.length));
                         if (funcName <= 0) {
                             funcName = 0
-                        } else if  (funcName >= dwarf.length){
-                            funcName = dwarf.length
-                            console.log(dwarf[funcName], '-----------------------------')
+                        } else if  (funcName >= dragonborn.length){
+                            funcName = dragonborn.length
+                            console.log(dragonborn[funcName], '-----------------------------')
                         }
-                        console.log(dwarf[funcName])
-                        setCharacterName(dwarf[funcName])
+                        console.log(dragonborn[funcName])
+                        setCharacterName(dragonborn[funcName])
                         break;
                     case 'Gnome':
                         funcName = Math.floor((Math.random() * gnome.length));
@@ -254,15 +261,15 @@ const Create = (props) => {
                         setCharacterName(gnome[funcName])
                         break;
                     case 'Half-Elf':
-                        funcName = Math.floor((Math.random() * dwarf.length));
+                        funcName = Math.floor((Math.random() * elf.length));
                         if (funcName <= 0) {
                             funcName = 0
-                        } else if  (funcName >= dwarf.length){
-                            funcName = dwarf.length
-                            console.log(dwarf[funcName], '-----------------------------')
+                        } else if  (funcName >= elf.length){
+                            funcName = elf.length
+                            console.log(elf[funcName], '-----------------------------')
                         }
-                        console.log(dwarf[funcName])
-                        setCharacterName(dwarf[funcName])
+                        console.log(elf[funcName])
+                        setCharacterName(elf[funcName])
                         break;
                     case 'Half-Orc':
                         funcName = Math.floor((Math.random() * orc.length));
@@ -276,21 +283,25 @@ const Create = (props) => {
                         setCharacterName(orc[funcName])
                         break;
                     case 'Tiefling':
-                        funcName = Math.floor((Math.random() * dwarf.length));
+                        funcName = Math.floor((Math.random() * tiefling.length));
                         if (funcName <= 0) {
                             funcName = 0
-                        } else if  (funcName >= dwarf.length){
-                            funcName = dwarf.length
-                            console.log(dwarf[funcName], '-----------------------------')
+                        } else if  (funcName >= tiefling.length){
+                            funcName = tiefling.length
+                            console.log(tiefling[funcName], '-----------------------------')
                         }
-                        console.log(dwarf[funcName])
-                        setCharacterName(dwarf[funcName])
+                        console.log(tiefling[funcName])
+                        setCharacterName(tiefling[funcName])
                         break;
                 
                     default:
                         break;
                 }
             console.log('name ', characterName)
+            setPlayerName(username)
+            console.log(username, '++++++++++++++++++++++++++++++++++')
+            console.log(playerName, '============================')
+
             }
     }
     
