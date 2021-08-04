@@ -1,3 +1,8 @@
+
+.mainDiv{
+    margin-top: 8%;
+}
+
 .h2{
     display: flex;
     justify-content: center;
@@ -24,7 +29,7 @@
 }
 
 .button{
-    justify-content: center;
+    margin-left: calc(100% - 53%);
     width: inherit;
     height: 50px;
     box-shadow: 7px -4px 7px black;

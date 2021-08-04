@@ -10,7 +10,6 @@ function Auth(props) {
   }
   return (
     <div>
-      <button onClick={fak}>fak</button>
           <Router>
       <Switch>
         <div className="Auth">

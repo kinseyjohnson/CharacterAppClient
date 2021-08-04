@@ -37,7 +37,7 @@ export default function Navigation() {
         <hr />
 
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/landing">
             <Landing />
           </Route>
           <Route path="/login">

@@ -11,8 +11,7 @@ import Create from './Components/Character/CharCreate';
 import Footer from './Components/Footer/Footer'
 // import Auth from './Components/Auth/Auth'
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
-import Navigation from './Components/Nav/Navbar';
-
+import Navigation from './Components/Nav/Navbar'
 
 function App() {
   const [toggle, setToggle] = useState(true);
@@ -40,21 +39,18 @@ function App() {
   //   setSessionToken('');
   // }
 
-  // const protectedViews = () => {
-  //   if(sessionToken !== undefined) {
-  //     return(
-  //     <Create sessionToken={sessionToken}/>
-  //     )
-  //   } else {
-  //     <Landing/>
-  //   }
-    
-  // }
 
+  const viewConductor = () => {
+    return (sessionToken === localStorage.getItem('token')
+    ? <Create token={sessionToken}/> : <Auth updateToken={updateToken}/>)}
+
+    // style={{width: "1200px",
+    // margin: "0 auto"}}
   return (
     <div>
-      <Navigation />
-      {/* {protectedViews()} */}
+      <Navigation/>
+      {viewConductor()}
+      {/* <Landing/> */}
       {/* <Router><Route path="/"><button onClick={Tog} className='button'>Start Here!</button></Route></Router> */}
       {/* { toggle ? <Landing/> : <Auth updateToken={updateToken} token={sessionToken} />}
       { toggle ? 
@@ -74,7 +70,7 @@ function App() {
       <Login style={{alignText: 'center'}}/> */}
       {/* <Test />
       <T /> */}
-      <Create token={sessionToken}/>
+      {/* <Create token={sessionToken}/> */}
       {/* <Create/> */}
       {/* <Landing />
       <button onClick={Tog} className='button'>Start Here!</button>
