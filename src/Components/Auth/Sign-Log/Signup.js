@@ -6,7 +6,8 @@ import { Context } from "../../../Context";
 
 
 const Signup = (props) => {
-    const {updateName} = useContext(Context)
+    const {updateName} = useContext(Context);
+    const {updateToken} = useContext(Context);
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -43,7 +44,7 @@ const Signup = (props) => {
         .then((data) => {
             console.log(data.user.username)
             updateName(data.user.username)
-            props.updateToken(data.sessionToken)
+            updateToken(data.sessionToken)
             // console.log(data)
             // console.log(data.sessionToken, '++++++++++++++++')
             if (data.sessionToken === undefined){

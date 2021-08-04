@@ -8,12 +8,14 @@ import {
 } from "react-router-dom";
 import Login from "../Auth/Sign-Log/Login";
 import Register from "../Auth/Sign-Log/Signup";
-import CreateChar from "../Character/CharCreate";
+// import CreateChar from "../Character/CharCreate";
 import Landing from "../Landing/LandingPage";
-import CharTable from "../Character/CharacterTable";
+// import CharTable from "../Character/CharacterTable";
+import CharacterIndex from '../Character/CharacterIndex';
 import "./navbar.css";
+import Create from "../Character/CharCreate";
 
-export default function Navigation() {
+export default function Navigation(props) {
   return (
     <Router>
       <ul>
@@ -21,6 +23,7 @@ export default function Navigation() {
           <NavLink
             style={{ textDecoration: "none", color: "White" }}
             to="/"
+            activeClassName="main-nav-active"
           >
             Home
           </NavLink>
@@ -29,6 +32,7 @@ export default function Navigation() {
           <NavLink
             style={{ textDecoration: "none", color: "White" }}
             to="/login"
+            activeClassName="main-nav-active"
           >
             Login
           </NavLink>
@@ -47,6 +51,7 @@ export default function Navigation() {
           <NavLink
             style={{ textDecoration: "none", color: "White" }}
             to="/create"
+            activeClassName="main-nav-active"
           >
             Create
           </NavLink>
@@ -55,6 +60,7 @@ export default function Navigation() {
           <NavLink
             style={{ textDecoration: "none", color: "White" }}
             to="/account"
+            activeClassName="main-nav-active"
           >
             My Account
           </NavLink>
@@ -74,16 +80,12 @@ export default function Navigation() {
           <Register />
         </Route>
         <Route path="/create">
-          <CreateChar />
+          <Create token={props.token}/>
         </Route>
         <Route path="/account">
-          <CharTable />
+          <CharacterIndex />
         </Route>
       </Switch>
     </Router>
   );
-}
-
-function Home() {
-  return <div></div>;
 }
