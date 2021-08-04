@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {Form, FormGroup, Input, Button} from 'reactstrap';
 import './sign-log.css';
 // import './Auth/login.css'
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import Signup from './Signup';
+import { Context } from '../../../Context';
 
 const Login = (props) => {
+    const {updateName} = useContext(Context);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -29,6 +31,7 @@ const Login = (props) => {
             }).then(
                 (response) => response.json()
             ).then((data) => {
+                updateName(data.user.username)
                 console.log(data)
                 console.log(data.message);
                 if (data.sessionToken === undefined){

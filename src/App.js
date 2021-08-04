@@ -12,6 +12,8 @@ import Footer from './Components/Footer/Footer'
 // import Auth from './Components/Auth/Auth'
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 
+import { Context } from './Context';
+
 function App() {
   const [toggle, setToggle] = useState(true);
   const Tog = () => setToggle(!toggle);
@@ -19,6 +21,8 @@ function App() {
 
   
   const [sessionToken, setSessionToken] = useState('');
+  const [username, setUsername] = useState('');
+
 
 
   useEffect(() => {
@@ -33,6 +37,15 @@ function App() {
     console.log(newToken , '-----------');
   }
 
+  
+  const updateName = (newName) => {
+    // if (!username){
+
+    // }
+    setUsername(newName);
+    console.log(newName , '-----------');
+  }
+
   // const clearToken = () => {
   //   localStorage.clear();
   //   setSessionToken('');
@@ -45,7 +58,11 @@ function App() {
 
     // style={{width: "1200px",
     // margin: "0 auto"}}
+
   return (
+    <Context.Provider value={{
+      updateName, username
+    }}>
     <div>
       {/* <Router><Route path="/"><button onClick={Tog} className='button'>Start Here!</button></Route></Router> */}
       { toggle ? <Landing/> : <Auth updateToken={updateToken} token={sessionToken} />}
@@ -53,9 +70,11 @@ function App() {
       <Router>
         <React.Fragment>
           <Switch>
-            <Link to="/login">
+            <div className='landingpage-btn'>
+            <Link to="/login" className="landingpage-link">
               <button onClick={Tog} className='button'>Start Here!</button>
             </Link>
+            </div>
           </Switch>
         </React.Fragment>
       </Router> 
@@ -73,6 +92,7 @@ function App() {
       {toggle ? <Auth/> : null} */}
       <Footer />
     </div>
+    </Context.Provider>
   );
 }
 
