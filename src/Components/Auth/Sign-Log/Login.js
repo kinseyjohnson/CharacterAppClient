@@ -32,6 +32,7 @@ const Login = (props) => {
             }).then(
                 (response) => response.json()
             ).then((data) => {
+                console.log(data)
                 updateName(data.user.username)
                 console.log(data)
                 console.log(data.message);

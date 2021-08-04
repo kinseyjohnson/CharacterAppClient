@@ -8,11 +8,12 @@ import {
 } from "react-router-dom";
 import Login from "../Auth/Sign-Log/Login";
 import Register from "../Auth/Sign-Log/Signup";
-import Create from "../Character/CharCreate";
+// import CreateChar from "../Character/CharCreate";
 import Landing from "../Landing/LandingPage";
 // import CharTable from "../Character/CharacterTable";
 import CharacterIndex from '../Character/CharacterIndex';
 import "./navbar.css";
+import Create from "../Character/CharCreate";
 
 export default function Navigation(props) {
   return (
@@ -22,7 +23,7 @@ export default function Navigation(props) {
           <NavLink
             style={{ textDecoration: "none", color: "White" }}
             to="/"
-            // activeClassName="main-nav-active"
+            activeClassName="main-nav-active"
           >
             Home
           </NavLink>
@@ -79,7 +80,7 @@ export default function Navigation(props) {
           <Register />
         </Route>
         <Route path="/create">
-          <Create token={props.token} />
+          <Create token={props.token}/>
         </Route>
         <Route path="/account">
           <CharacterIndex />
@@ -87,8 +88,4 @@ export default function Navigation(props) {
       </Switch>
     </Router>
   );
-}
-
-function Home() {
-  return <div></div>;
 }

@@ -22,50 +22,48 @@ const Create = (props) => {
     const [charisma, setCharisma] = useState('');
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch("http://localhost:3000/character/create", {
-      method: "POST",
-      body: JSON.stringify({
-        character: {
-          characterName: characterName,
-          playerName: playerName,
-          characterClass: characterClass,
-          level: level,
-          race: race,
-          background: background,
-          alignment: alignment,
-          strength: strength,
-          dexterity: dexterity,
-          constitution: constitution,
-          intelligence: intelligence,
-          wisdom: wisdom,
-          charisma: charisma,
-        },
-      }),
-      headers: new Headers({
-        "Content-Type": "application/json",
-        "Authorization": `SECRET ${sessionToken}`,
-      }),
-    })
-      .then((res) => res.json())
-      .then((characterData) => {
-        console.log(characterData, 'yeeeeeeeeee');
-        setCharacterName("");
-        setPlayerName("");
-        setCharacterClass("");
-        setLevel("");
-        setRace("");
-        setBackground("");
-        setAlignment("");
-        setStrength("");
-        setDexterity("");
-        setConstitution("");
-        setIntelligence("");
-        setWisdom("");
-        setCharisma("");
-      });
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        fetch('http://localhost:3000/character/create', {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': `SECRET ${props.token}`
+            }),
+            body: JSON.stringify({
+                character: {
+                    characterName: characterName, 
+                    playerName: playerName, 
+                    characterClass: characterClass, 
+                    level: level, 
+                    race: race, 
+                    background: background, 
+                    alignment: alignment, 
+                    strength: strength, 
+                    dexterity: dexterity, 
+                    constitution: constitution, 
+                    intelligence: intelligence, 
+                    wisdom: wisdom, 
+                    charisma: charisma
+                }}),
+        }).then((res) => res.json())
+        .then((characterData) => {
+            console.log(characterData.playerName);
+            setCharacterName('');
+            setPlayerName('');
+            setCharacterClass('');
+            setLevel('');
+            setRace('');
+            setBackground('');
+            setAlignment('');
+            setStrength('');
+            setDexterity('');
+            setConstitution('');
+            setIntelligence('');
+            setWisdom('');
+            setCharisma('')
+        })
+    }
 
 
 

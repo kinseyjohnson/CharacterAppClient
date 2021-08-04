@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 .lending-inner{
     margin-top: 25vh;
 }
+=======
+
+.mainDiv{
+    margin-top: 8%;
+}
+
+>>>>>>> d3020281d955d532f56604de78eb9aa2b899a058
 .h2{
     display: flex;
     justify-content: center;
@@ -27,7 +35,7 @@
 }
 
 .button{
-    justify-content: center;
+    margin-left: calc(100% - 53%);
     width: inherit;
     height: 50px;
     box-shadow: 7px -4px 7px black;
