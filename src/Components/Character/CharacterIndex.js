@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import CharacterTable from './CharacterTable';
 import CharCreate from './CharCreate';
 
-const CharacterIndex = () => {
+const CharacterIndex = (props) => {
   const [characters, setCharacters] = useState([]);
   const [updateActive, setUpdateActive] = useState(false);
-  const [characterToUpdate, setharacterToUpdate] = useState({});
+  const [characterToUpdate, setCharacterToUpdate] = useState({});
 
-  const fetchCharacters = () => {
+  const fetchCharacters = (props) => {
     fetch(`http://localhost:3000/character/${character.id}`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: SECRET `${props.token}`
+        Authorization: `SECRET ${props.token}`
       }),
     })
       .then((res) => res.json())

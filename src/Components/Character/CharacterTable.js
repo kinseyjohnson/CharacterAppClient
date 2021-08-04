@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Table, Button } from "reactstrap";
 
 const CharacterTable = (props) => {
+  const [characters, setCharacters] = useState('')
 
     const deleteCharacter = (character) => {
         fetch(`http://localhost:3000/character/${character.id}`, {
@@ -14,7 +15,7 @@ const CharacterTable = (props) => {
         .then(() => props.fetchCharacters())
     }
 
-    const characterMapper = () => {
+    const characterMapper = (props) => {
         return props.characters.map((character, index) => {
         return(
             <tr key={index}>
