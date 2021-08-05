@@ -38,42 +38,34 @@ const CharacterIndex = (props) => {
     console.log(character);
   };
 
-//   const updateOn = () => {
-//     setUpdateActive(true);
-//   };
+  const updateOn = () => {
+    setUpdateActive(true);
+  };
 
-//   const updateOff = () => {
-//     setUpdateActive(false);
-//   };
+  const updateOff = () => {
+    setUpdateActive(false);
+  };
 
   return (
     <Container>
-        {/* {fetchCharacters} */}
-      {/* <Row>
-        <Col md="3">
+        <Row>
+        {/* <Col md="3">
           <CharCreate fetchCharacters={fetchCharacters} token={props.token} />
-        </Col> */}
+        </Col> */} */
         <Col md="9">
           <CharacterTable
             characters={characters}
-            // editUpdateCharacter={editCharacters}
-            // updateOn={updateOn}
+            editUpdateCharacter={CharacterEdit}
+            updateOn={updateOn}
             fetchCharacters={fetchCharacters}
             token={sessionToken}
           />
-        </Col>
-        {/* {updateActive ? (
-          <CharacterEdit
-            characterToUpdate={characterToUpdate}
-            updateOff={updateOff}
-            token={props.token}
-            fetchCharacters={fetchCharacters}
-          />
-        ) : (
-          <></>
-        )}
-      </Row> */}
+    </Col>
+                {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate}
+                updateOff={updateOff} token={props.token} fetchCharacters={fetchCharacters}/> : <></>}
+            </Row>
     </Container>
-  )};
+  )
+}
 
   export default CharacterIndex;

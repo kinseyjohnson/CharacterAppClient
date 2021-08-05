@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,8 +14,12 @@ import Landing from "../Landing/LandingPage";
 import CharacterIndex from '../Character/CharacterIndex';
 import "./navbar.css";
 import Create from "../Character/CharCreate";
+import {Context} from '../../Context';
 
 export default function Navigation(props) {
+
+  const {clearToken} = useContext(Context)
+
   return (
     <Router>
       <ul>
@@ -63,6 +67,16 @@ export default function Navigation(props) {
             activeClassName="main-nav-active"
           >
             My Account
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            style={{ textDecoration: "none", color: "White" }}
+            to="/"
+            activeClassName="main-nav-active"
+            onClick={clearToken}
+          >
+            Logout
           </NavLink>
         </li>
       </ul>

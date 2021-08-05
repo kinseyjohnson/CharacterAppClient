@@ -2,6 +2,7 @@ import React from "react";
 import { Table, Button } from "reactstrap";
 
 const CharacterTable = (props) => {
+    console.log(props, "+++++++++++++++++++++++++")
   const deleteCharacter = (character) => {
       console.log(props.token)
     fetch(`http://localhost:3000/character/delete/${character.id}`, {
@@ -26,7 +27,7 @@ const CharacterTable = (props) => {
           <td>{character.race}</td>
           <td>
             <Button
-              style={{ backgroundColor: "grey", margin: "3px" }}
+              style={{ backgroundColor: "grey", margin: "3px" }} onClick={() => {props.editUpdateCharacter(character); props.updateOn()}}
               size="sm"
             >
               Edit

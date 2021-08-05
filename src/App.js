@@ -53,10 +53,10 @@ function App() {
     console.log(newName , '-----------');
   }
 
-  // const clearToken = () => {
-  //   localStorage.clear();
-  //   setSessionToken('');
-  // }
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
 
 
   // const protectedViews = () => {
@@ -68,7 +68,7 @@ function App() {
 
     return (
       <Context.Provider value={{
-        updateName, updateToken, username, sessionToken
+        updateName, updateToken, username, sessionToken, clearToken
       }}>
       <div>
         <Navigation token={sessionToken}/>
