@@ -55,7 +55,7 @@ const CharacterIndex = (props) => {
     <Container>
         <Row>
         <Col md="3">
-          <CharCreate fetchCharacters={fetchCharacters} token={sessionToken} />
+          {/* <CharCreate fetchCharacters={fetchCharacters} token={sessionToken} /> */}
         </Col>
         <Col md="9" style={{"width": "100%"}}>
           <CharacterTable

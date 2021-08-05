@@ -27,7 +27,6 @@ const Edit = (props) => {
   console.log(editDexterity, '=========================editCharacterName')
   console.log(editConstitution, '=========================editCharacterName')
   console.log(editIntelligence, '=========================editCharacterName')
-
   console.log(editWisdom, '=========================editCharacterName')
   console.log(editCharisma, '=========================editCharacterName')
 
@@ -36,34 +35,35 @@ const Edit = (props) => {
 // //   console.log(editConstitution)
 // //   console.log(editDexterity)
 
-  const characterUpdate = (event, character) => {
-      console.log("++++++++++++++++++++++++++++++++++++++++++============")
+  const characterUpdate = (event) => {
+      console.log(props.race, "++++++++++++++++++++++++++++++++++++++++++============")
     event.preventDefault();
-    fetch(`http://localhost:3000/character/${props.characterToUpdate.id}`, {
+    fetch(`http://localhost:3000/character/edit/${props.characterToUpdate.id}`, {
       method: "PUT",
       body: JSON.stringify({
         character: {
           characterName: editCharacterName,
           playerName: editPlayerName,
           characterClass: editCharacterClass,
-          level: editLevel,
-          race: editRace,
-          background: editBackground,
-          alignment: editAlignment,
-          strength: editStrength,
-          dexterity: editDexterity,
-          constitution: editConstitution,
-          intelligence: editIntelligence,
-          wisdom: editWisdom,
-          charisma: editCharisma,
+        //   level: editLevel,
+        //   race: editRace,
+        //   background: editBackground,
+        //   alignment: editAlignment,
+        //   strength: editStrength,
+        //   dexterity: editDexterity,
+        //   constitution: editConstitution,
+        //   intelligence: editIntelligence,
+        //   wisdom: editWisdom,
+        //   charisma: editCharisma,
         },
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: props.token,
+        'Authorization': `SECRET ${props.token}`,
       }),
     }).then((res) => {
       props.fetchCharacters();
+      props.updateOff();
     });
   }
 
