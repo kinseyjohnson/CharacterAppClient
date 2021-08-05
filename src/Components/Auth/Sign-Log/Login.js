@@ -5,6 +5,7 @@ import './sign-log.css';
 import { Route, BrowserRouter as Router, Link, Switch } from 'react-router-dom';
 import Signup from './Signup';
 import { Context } from '../../../Context';
+import APIURL from '../../../helpers/environment';
 
 const Login = (props) => {
     const {updateName} = useContext(Context);
@@ -23,7 +24,7 @@ let clearInputs = () => {
     const handleSubmit = (event) => {
         // console.log(props)
         event.preventDefault();
-        fetch('http://localhost:3000/user/login', {
+        fetch(`${APIURL}/user/login`, {
             method: "POST",
             body: JSON.stringify({
                 user:{

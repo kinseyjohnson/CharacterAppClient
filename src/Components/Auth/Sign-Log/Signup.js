@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import Login from './Login';
 import { Context } from "../../../Context";
 import { Button } from "reactstrap";
+import APIURL from "../../../helpers/environment";
 
 
 const Signup = (props) => {
@@ -27,7 +28,7 @@ const Signup = (props) => {
     let handleSumbit = (e) => {
         // console.log(props, '++++++++++++++++++++')
         e.preventDefault();
-        fetch('http://localhost:3000/user/register', {
+        fetch(`${APIURL}/user/register`, {
             method: 'POST',
             body: JSON.stringify({
                 user: {

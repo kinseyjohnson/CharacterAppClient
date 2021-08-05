@@ -4,6 +4,7 @@ import CharacterTable from './CharacterTable';
 import CharacterEdit from './CharEdit';
 import CharCreate from './CharCreate';
 import { Context } from  '../../Context';
+import APIURL from "../../helpers/environment";
 
 
 const CharacterIndex = (props) => {
@@ -36,7 +37,7 @@ const CharacterIndex = (props) => {
     //   console.log(sessionToken, 'paaul');
     // fetch(`http://localhost:3000/character/misha`, {
     //   console.log(sessionToken);
-    fetch(`http://localhost:3000/character/usercharacters`, {
+    fetch(`${APIURL}/character/usercharacters`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

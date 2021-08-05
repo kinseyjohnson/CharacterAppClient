@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import APIURL from "./helpers/environment";
 
 
 const T = () => {
@@ -19,7 +20,7 @@ const T = () => {
 
 
     const F = (e) =>{
-        fetch( 'http://localhost:3000/character/create' )
+        fetch( `${APIURL}/character/create` )
         .then( res => res.json() )
         .then( json => {
             const getJson = json.json;

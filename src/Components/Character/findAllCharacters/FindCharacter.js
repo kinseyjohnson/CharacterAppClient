@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import APIURL from '../../../helpers/environment';
 import CharacterDisplay from './CharacterDisplay';
 import './findCharacter.css'
 
@@ -6,7 +7,7 @@ const FindCharacters = (props) => {
     const [characters, setCharacters] = useState([]);
 
     const fetchCharacters = () => {
-        fetch('https://localhost:3000/character/findAll', {
+        fetch(`${APIURL}/character/findAll`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json'
