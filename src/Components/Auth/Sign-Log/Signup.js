@@ -3,6 +3,7 @@ import './sign-log.css';
 import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import Login from './Login';
 import { Context } from "../../../Context";
+import { Button } from "reactstrap";
 
 
 const Signup = (props) => {
@@ -26,7 +27,6 @@ const Signup = (props) => {
     let handleSumbit = (e) => {
         console.log(props, '++++++++++++++++++++')
         e.preventDefault();
-        // const url = 'http://localhost:3000/user/register';
         fetch('http://localhost:3000/user/register', {
             method: 'POST',
             body: JSON.stringify({
@@ -59,7 +59,7 @@ const Signup = (props) => {
 
     }
     return(
-        <div className='sign-inner'>
+        <div className='sign-log-inner'>
             <h1>Get Started</h1>
             <form onSubmit={handleSumbit}>
                 <input type="text" 
@@ -67,8 +67,9 @@ const Signup = (props) => {
                 value={username} 
                 onChange={(e) => setUsername(e.target.value)} 
                 placeholder='Username'
-                pattern='[\w]{4,}'
-                title='At least 4 character and one number or special symbol'/>
+                pattern='(?=.*\d)[\w]{4,}'
+                // pattern='^(?=.*\d)[\w]{4,}$|^(?=.*[#$@!%&*?])[\w]{4,}$|^(?=.*\d)[\w]{4,}$|^(?=.*[#$@!%&*?])[\w]{4,}$'
+                title='At least 4 character and one number'/>
                 <input type="text" 
                 name='email' 
                 value={email} 
@@ -76,7 +77,7 @@ const Signup = (props) => {
                 placeholder={sayWarning}
                 className={toggle === true ? "warning" : null}
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                title="It mast be email"/> 
+                title="For example test@test.com"/> 
                 <input type="password" 
                 name='password' 
                 value={password} 
@@ -84,11 +85,11 @@ const Signup = (props) => {
                 placeholder='Password'
                 pattern="[a-zA-z0-9]{5,}"
                 title="At least 5 characters"/>
-                <button type="submit">Sign Up</button>
+                <Button type="submit">Sign Up</Button>
                 {/* <Router> */}
                     <Switch>
                     <div className='login'>
-                        <h3 style={{fontFamily: 'arial'}}>Already have an account?
+                        <h3 style={{fontFamily: 'arial', marginTop: '15px'}}>Already have an account?
                             <Link to="/login"> Login!</Link>
                             <Route path='/login' exact component={Login} />
                         </h3>

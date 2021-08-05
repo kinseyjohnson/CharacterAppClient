@@ -27,7 +27,6 @@ const Edit = (props) => {
   console.log(editDexterity, '=========================editCharacterName')
   console.log(editConstitution, '=========================editCharacterName')
   console.log(editIntelligence, '=========================editCharacterName')
-
   console.log(editWisdom, '=========================editCharacterName')
   console.log(editCharisma, '=========================editCharacterName')
 
@@ -60,7 +59,7 @@ const Edit = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: props.token,
+        "Authorization": `SECRET ${props.token}`
       }),
     }).then((res) => {
       props.fetchCharacters();

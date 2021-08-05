@@ -1,5 +1,5 @@
-.sign-inner{
-    width: 436px;
+.sign-log-inner{
+    width: 446px;
     margin: 0 auto;
     margin-top: 20vh;
     padding: 20px;
@@ -10,15 +10,15 @@
     border-radius: 15px;
 }
 
-.sign-inner h1 {
+.sign-log-inner h1 {
     font-size: 48px;
 }
 
-.sign-inner form {
+.sign-log-inner form {
     display: grid;
 }
 
-.sign-inner form input {
+.sign-log-inner form input {
     width: 370px;
     margin: 6px auto;
     padding: 5px;
@@ -29,11 +29,11 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.sign-inner form input:focus {
+.sign-log-inner form input:focus {
     outline: none;
 }
 
-.sign-inner form button {
+.sign-log-inner form button {
     width: 120px;
     padding: 5px;
     margin: 0 auto;

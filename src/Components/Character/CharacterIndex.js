@@ -7,12 +7,12 @@ import { Context } from  '../../Context';
 
 
 const CharacterIndex = (props) => {
-  const {username} = useContext(Context)
+  // const {username} = useContext(Context)
   const [characters, setCharacters] = useState([]);
   const [updateActive, setUpdateActive] = useState(false);
   const [characterToUpdate, setCharacterToUpdate] = useState({});
   const {sessionToken} = useContext(Context);
-  const {updateToken} = useContext(Context);
+  // const {updateToken} = useContext(Context);
 
 
   const editUpdateCharacter = (character) => {
@@ -54,9 +54,9 @@ const CharacterIndex = (props) => {
   return (
     <Container>
         <Row>
-        <Col md="3">
+        {/* <Col md="3">
           <CharCreate fetchCharacters={fetchCharacters} token={sessionToken} />
-        </Col>
+        </Col> */}
         <Col md="9" style={{"width": "100%"}}>
           <CharacterTable
             characters={characters}

@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import {Form, FormGroup, Input, Button} from 'reactstrap';
 import './sign-log.css';
 // import './Auth/login.css'
-import { Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom';
+import { Route, BrowserRouter as Router, Link, Switch } from 'react-router-dom';
 import Signup from './Signup';
 import { Context } from '../../../Context';
 
@@ -14,6 +14,11 @@ const Login = (props) => {
     const [password, setPassword] = useState('');
     const [newToggle, setNewToggle] = useState(false)
 // const [login, setLogin] = useState(true);
+
+let clearInputs = () => {
+    setEmail('');
+    setPassword('');
+}
 
     const handleSubmit = (event) => {
         console.log(props)
@@ -38,15 +43,19 @@ const Login = (props) => {
                     setNewToggle(!newToggle)
                     
                 }
-                updateToken(data.sessionToken);
-                updateName(data.user.username)
-                console.log(data.sessionToken);
-                console.log(data)
+                if (data.sessionToken !== undefined && data.user.username !== undefined) {
+                    updateToken(data.sessionToken);
+                    updateName(data.user.username)
+                    console.log(data.sessionToken);
+                    console.log(data)
+                    clearInputs()
+                    
+                }
             })
             // console.log(email, password);
         }
         return (
-            <div className='sign-inner'>
+            <div className='sign-log-inner'>
                 <h1 style={{textAlign: 'center'}}>Login</h1>
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
@@ -70,7 +79,7 @@ const Login = (props) => {
                 {/* <Router> */}
                     <Switch>
                     <div className='sign-up'>
-                        <h3 style={{fontFamily: 'arial'}}>Don't have an account?
+                        <h3 style={{fontFamily: 'arial', marginTop: '15px'}}>Don't have an account?
                         <Link to="/register"> Sign up!</Link>
                         <Route path='/register' exact component={Signup} />
                     </h3>
