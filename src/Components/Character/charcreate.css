@@ -1,0 +1,43 @@
+.wrapper{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.formstyle{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 30%;
+    color: white;
+    margin-top: 50px;
+}
+
+.formstyle2{
+    margin-left: 400px;
+    margin-top: -420px;
+    
+}
+
+.inputstyle{
+    margin-bottom: 20px;
+}
+
+.parastyle{
+    color: white;
+    font-Size: 25px;
+    margin-left: 39%;
+    margin-top: 80px;
+}
+
+.bttnstyle  {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 130px;
+    width: 70px;
+    height: 40px
+}
+
+.charnamestyle  {
+    margin-left: 35%;
+}

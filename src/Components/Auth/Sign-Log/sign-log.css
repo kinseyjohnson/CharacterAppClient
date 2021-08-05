@@ -1,0 +1,57 @@
+.sign-log-inner{
+    width: 446px;
+    margin: 0 auto;
+    margin-top: 20vh;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(247, 180, 132, 0.8) 0%, rgba(255, 125, 4, 0.432) 100%);
+    border: 1px solid #000000;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.sign-log-inner h1 {
+    font-size: 48px;
+}
+
+.sign-log-inner form {
+    display: grid;
+}
+
+.sign-log-inner form input {
+    width: 370px;
+    margin: 6px auto;
+    padding: 5px;
+    line-height: 20px;
+    font-size:  25px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sign-log-inner form input:focus {
+    outline: none;
+}
+
+.sign-log-inner form button {
+    width: 120px;
+    padding: 5px;
+    margin: 0 auto;
+    margin-top: 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ! PLACEHOLDER SIGN UP MESSAGE WARNING */
+.warning{
+    font-size: 22px !important;
+}
+.warning-text{
+    font-size: 22px;
+    color: black;
+}
+.warning::placeholder{
+    color: #ed5249;
+}

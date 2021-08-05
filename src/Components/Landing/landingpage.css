@@ -1,0 +1,45 @@
+.lending-inner{
+    margin-top: 25vh;
+}
+.h2{
+    display: flex;
+    justify-content: center;
+    color: lightgrey;
+}
+
+.p{
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+    font-size: 30px;
+    color: lightgrey;
+}
+
+.landingpage-btn{
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.landingpage-link{
+    width: inherit;
+}
+
+.button{
+    width: inherit;
+    height: 50px;
+    box-shadow: 7px -4px 7px black;
+    border-radius: 10px;
+    background: rgb(0,0,0);
+    border: none;
+    opacity: 1;
+    background: linear-gradient(230deg, rgba(50,50,50,1) 4%, rgba(252,127,44,1) 94%);  
+    transition: 0.5s;
+    transition-property: opacity;
+}
+
+.button:hover{
+    transition: 0.5s;
+    opacity: 0.5;
+    transition-property: opacity;
+}
