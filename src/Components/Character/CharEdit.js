@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap'
 
 const Edit = (props) => {
-  console.log(props, '-------------------------props EDIT');  
+  // console.log(props, '-------------------------props EDIT');  
   const [editCharacterName, setEditCharacterName] = useState(props.characterToUpdate.characterName);
   const [editPlayerName, setEditPlayerName] = useState(props.characterToUpdate.playerName);
   const [editCharacterClass, setEditCharacterClass] = useState(props.characterToUpdate.characterClass);
@@ -16,19 +16,19 @@ const Edit = (props) => {
   const [editIntelligence, setEditIntelligence] = useState(props.characterToUpdate.intelligence);
   const [editWisdom, setEditWisdom] = useState(props.characterToUpdate.wisdom);
   const [editCharisma, setEditCharisma] = useState(props.characterToUpdate.charisma);
-  console.log(editCharacterName, '=========================editCharacterName')
-  console.log(editPlayerName, '=========================editCharacterName')
-  console.log(editCharacterClass, '=========================editCharacterName')
-  console.log(editLevel, '=========================editCharacterName')
-  console.log(editRace, '=========================editCharacterName')
-  console.log(editBackground, '=========================editCharacterName')
-  console.log(editAlignment, '=========================editCharacterName')
-  console.log(editStrength, '=========================editCharacterName')
-  console.log(editDexterity, '=========================editCharacterName')
-  console.log(editConstitution, '=========================editCharacterName')
-  console.log(editIntelligence, '=========================editCharacterName')
-  console.log(editWisdom, '=========================editCharacterName')
-  console.log(editCharisma, '=========================editCharacterName')
+  // console.log(editCharacterName, '=========================editCharacterName')
+  // console.log(editPlayerName, '=========================editCharacterName')
+  // console.log(editCharacterClass, '=========================editCharacterName')
+  // console.log(editLevel, '=========================editCharacterName')
+  // console.log(editRace, '=========================editCharacterName')
+  // console.log(editBackground, '=========================editCharacterName')
+  // console.log(editAlignment, '=========================editCharacterName')
+  // console.log(editStrength, '=========================editCharacterName')
+  // console.log(editDexterity, '=========================editCharacterName')
+  // console.log(editConstitution, '=========================editCharacterName')
+  // console.log(editIntelligence, '=========================editCharacterName')
+  // console.log(editWisdom, '=========================editCharacterName')
+  // console.log(editCharisma, '=========================editCharacterName')
 
 // //   console.log(editLevel)
 // //   console.log(editCharisma)
@@ -36,7 +36,7 @@ const Edit = (props) => {
 // //   console.log(editDexterity)
 
   const characterUpdate = (event) => {
-      console.log(props.race, "++++++++++++++++++++++++++++++++++++++++++============")
+      // console.log(props.race, "++++++++++++++++++++++++++++++++++++++++++============")
     event.preventDefault();
     fetch(`http://localhost:3000/character/edit/${props.characterToUpdate.id}`, {
       method: "PUT",

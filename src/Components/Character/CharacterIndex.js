@@ -17,7 +17,7 @@ const CharacterIndex = (props) => {
 
   const editUpdateCharacter = (character) => {
     setCharacterToUpdate(character);
-    console.log(character, '-------------------------------character');
+    // console.log(character, '-------------------------------character');
   };
   
   useEffect(() => {
@@ -46,7 +46,7 @@ const CharacterIndex = (props) => {
       .then(res => res.json())
       .then(characterData => {
         setCharacters(characterData);
-        console.log(characterData, '        CharacterAppClient')
+        // console.log(characterData, '        CharacterAppClient')
       });
   };
 

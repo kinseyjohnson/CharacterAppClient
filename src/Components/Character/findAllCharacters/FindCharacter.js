@@ -13,7 +13,7 @@ const FindCharacters = (props) => {
             })
         }).then((res) => res.json())
         .then((characterData) => {
-            console.log(characterData)
+            // console.log(characterData)
             setCharacters(characterData)
         })
     }

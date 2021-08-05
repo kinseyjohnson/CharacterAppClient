@@ -21,7 +21,7 @@ let clearInputs = () => {
 }
 
     const handleSubmit = (event) => {
-        console.log(props)
+        // console.log(props)
         event.preventDefault();
         fetch('http://localhost:3000/user/login', {
             method: "POST",
@@ -37,8 +37,8 @@ let clearInputs = () => {
             }).then(
                 (response) => response.json()
             ).then((data) => {
-                console.log(data)
-                console.log(data.message);
+                // console.log(data)
+                // console.log(data.message);
                 if (data.sessionToken === undefined){
                     setNewToggle(!newToggle)
                     
@@ -46,8 +46,8 @@ let clearInputs = () => {
                 if (data.sessionToken !== undefined && data.user.username !== undefined) {
                     updateToken(data.sessionToken);
                     updateName(data.user.username)
-                    console.log(data.sessionToken);
-                    console.log(data)
+                    // console.log(data.sessionToken);
+                    // console.log(data)
                     clearInputs()
                     
                 }

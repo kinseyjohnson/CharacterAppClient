@@ -40,7 +40,7 @@ function App() {
   const updateToken = (newToken) => {
     localStorage.setItem('token', newToken);
     setSessionToken(newToken);
-    console.log(newToken , '-----------');
+    // console.log(newToken , '-----------');
   }
 
   
@@ -49,7 +49,7 @@ function App() {
 
     // }
     setUsername(newName);
-    console.log(newName , '-----------');
+    // console.log(newName , '-----------');
   }
 
   const clearToken = () => {

@@ -25,7 +25,7 @@ const Signup = (props) => {
 
 
     let handleSumbit = (e) => {
-        console.log(props, '++++++++++++++++++++')
+        // console.log(props, '++++++++++++++++++++')
         e.preventDefault();
         fetch('http://localhost:3000/user/register', {
             method: 'POST',
@@ -42,7 +42,7 @@ const Signup = (props) => {
         })
         .then(res => res.json())
         .then((data) => {
-            console.log(data.user.username)
+            // console.log(data.user.username)
             updateName(data.user.username)
             updateToken(data.sessionToken)
             // console.log(data)

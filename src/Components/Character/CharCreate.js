@@ -50,7 +50,7 @@ const handleSubmit = (e) => {
     })
     .then((res) => res.json())
     .then((characterData) => {
-        console.log(characterData, 'yeeeeeeeeee');
+        // console.log(characterData, 'yeeeeeeeeee');
         setCharacterName("");
         setPlayerName("");
         setCharacterClass("");
@@ -133,11 +133,11 @@ const handleSubmit = (e) => {
                     setAlignment( alignmen[getParameterArr[3]] )
             
                 }
-                console.log(characterClass);
-                console.log(race);
-                console.log(background);
-                console.log(alignment)
-                console.log("DON'T REMEMBER ")
+                // console.log(characterClass);
+                // console.log(race);
+                // console.log(background);
+                // console.log(alignment)
+                // console.log("DON'T REMEMBER ")
             }
         }
 
@@ -170,7 +170,7 @@ const handleSubmit = (e) => {
                     setCharisma( properties[5] )
                 }
 
-                console.log( 'STATS ', strength, dexterity, constitution, intelligence, wisdom, charisma );
+                // console.log( 'STATS ', strength, dexterity, constitution, intelligence, wisdom, charisma );
 
             }
 
@@ -187,7 +187,7 @@ const handleSubmit = (e) => {
                 } 
 
                 setLevel( lvl )
-                console.log('LVL ' , level )
+                // console.log('LVL ' , level )
             }
 
             
@@ -201,9 +201,9 @@ const handleSubmit = (e) => {
                             funcName = 0
                         } else if  (funcName >= dwarf.length){
                             funcName = elf.length
-                            console.log(dwarf[funcName], '-----------------------------')
+                            // console.log(dwarf[funcName], '-----------------------------')
                         }
-                        console.log(dwarf[funcName])
+                        // console.log(dwarf[funcName])
                         setCharacterName(dwarf[funcName])
                         break;
                     case 'Elf':
@@ -212,9 +212,9 @@ const handleSubmit = (e) => {
                             funcName = 0
                         } else if  (funcName >= elf.length){
                             funcName = elf.length
-                            console.log(elf[funcName], '-----------------------------')
+                            // console.log(elf[funcName], '-----------------------------')
                         }
-                        console.log(elf[funcName])
+                        // console.log(elf[funcName])
                         setCharacterName(elf[funcName])
                         break;
                     case 'Halfiling':
@@ -223,9 +223,9 @@ const handleSubmit = (e) => {
                             funcName = 0
                         } else if  (funcName >= halfling.length){
                             funcName = halfling.length
-                            console.log(halfling[funcName], '-----------------------------')
+                            // console.log(halfling[funcName], '-----------------------------')
                         }
-                        console.log(halfling[funcName])
+                        // console.log(halfling[funcName])
                         setCharacterName(halfling[funcName])
                         break;
                     case 'Human':
@@ -234,9 +234,9 @@ const handleSubmit = (e) => {
                             funcName = 0
                         } else if  (funcName >= human.length){
                             funcName = human.length
-                            console.log(human[funcName], '-----------------------------')
+                            // console.log(human[funcName], '-----------------------------')
                         }
-                        console.log(human[funcName])
+                        // console.log(human[funcName])
                         setCharacterName(human[funcName])
                         break;
                     case 'Dragonborn': 
@@ -245,9 +245,9 @@ const handleSubmit = (e) => {
                             funcName = 0
                         } else if  (funcName >= dragonborn.length){
                             funcName = dragonborn.length
-                            console.log(dragonborn[funcName], '-----------------------------')
+                            // console.log(dragonborn[funcName], '-----------------------------')
                         }
-                        console.log(dragonborn[funcName])
+                        // console.log(dragonborn[funcName])
                         setCharacterName(dragonborn[funcName])
                         break;
                     case 'Gnome':
@@ -256,9 +256,9 @@ const handleSubmit = (e) => {
                             funcName = 0
                         } else if  (funcName >= gnome.length){
                             funcName = gnome.length
-                            console.log(gnome[funcName], '-----------------------------')
+                            // console.log(gnome[funcName], '-----------------------------')
                         }
-                        console.log(gnome[funcName])
+                        // console.log(gnome[funcName])
                         setCharacterName(gnome[funcName])
                         break;
                     case 'Half-Elf':
@@ -267,9 +267,9 @@ const handleSubmit = (e) => {
                             funcName = 0
                         } else if  (funcName >= elf.length){
                             funcName = elf.length
-                            console.log(elf[funcName], '-----------------------------')
+                            // console.log(elf[funcName], '-----------------------------')
                         }
-                        console.log(elf[funcName])
+                        // console.log(elf[funcName])
                         setCharacterName(elf[funcName])
                         break;
                     case 'Half-Orc':
@@ -278,9 +278,9 @@ const handleSubmit = (e) => {
                             funcName = 0
                         } else if  (funcName >= orc.length){
                             funcName = orc.length
-                            console.log(orc[funcName], '-----------------------------')
+                            // console.log(orc[funcName], '-----------------------------')
                         }
-                        console.log(orc[funcName])
+                        // console.log(orc[funcName])
                         setCharacterName(orc[funcName])
                         break;
                     case 'Tiefling':
@@ -289,19 +289,19 @@ const handleSubmit = (e) => {
                             funcName = 0
                         } else if  (funcName >= tiefling.length){
                             funcName = tiefling.length
-                            console.log(tiefling[funcName], '-----------------------------')
+                            // console.log(tiefling[funcName], '-----------------------------')
                         }
-                        console.log(tiefling[funcName])
+                        // console.log(tiefling[funcName])
                         setCharacterName(tiefling[funcName])
                         break;
                 
                     default:
                         break;
                 }
-            console.log('name ', characterName)
+            // console.log('name ', characterName)
             setPlayerName(username)
-            console.log(username, '++++++++++++++++++++++++++++++++++')
-            console.log(playerName, '============================')
+            // console.log(username, '++++++++++++++++++++++++++++++++++')
+            // console.log(playerName, '============================')
 
             }
     }

@@ -15,7 +15,7 @@ const CharacterTable = (props, character) => {
   //     }),9
   //   }).then(() => props.fetchCharacters());
   // };
-    console.log(props, "+++++++++++++++++++++++++here")
+    // console.log(props, "+++++++++++++++++++++++++here")
   const deleteCharacter = (character) => {
       // console.log(props.token)
     fetch(`http://localhost:3000/character/delete/${character.id}`, {
@@ -25,7 +25,7 @@ const CharacterTable = (props, character) => {
         'Authorization': `SECRET ${sessionToken}`,
       }),
     }).then(() => {
-        console.log("Guten Tag")
+        // console.log("Guten Tag")
         props.fetchCharacters()});
   };
 

@@ -76,11 +76,11 @@ const T = () => {
                     setAlignmentDrop( alignmen[getParameterArr[3]] )
             
                 }
-                console.log(classDrop);
-                console.log(raceDrop);
-                console.log(characterBgDrop);
-                console.log(alignmentDrop)
-                console.log("DON'T REMEMBER ")
+                // console.log(classDrop);
+                // console.log(raceDrop);
+                // console.log(characterBgDrop);
+                // console.log(alignmentDrop)
+                // console.log("DON'T REMEMBER ")
             }
         }
 
@@ -113,7 +113,7 @@ const T = () => {
                     setCharisma( properties[5] )
                 }
 
-                console.log( 'STATS ', sstrength, ddexterity, cconstitution, iintelligence, wwisdom, ccharisma );
+                // console.log( 'STATS ', sstrength, ddexterity, cconstitution, iintelligence, wwisdom, ccharisma );
 
             }
 
@@ -129,7 +129,7 @@ const T = () => {
                 } 
 
                 setLevel( lvl )
-                console.log('LVL ' , level )
+                // console.log('LVL ' , level )
             }
         // * 4 
             function names(dwarf, human, elf, gnome, halfling, orc){
@@ -141,9 +141,9 @@ const T = () => {
                             name = 0
                         } else if  (name >= dwarf.length){
                             name = elf.length
-                            console.log(dwarf[name], '-----------------------------')
+                            // console.log(dwarf[name], '-----------------------------')
                         }
-                        console.log(dwarf[name])
+                        // console.log(dwarf[name])
                         setNam(dwarf[name])
                         break;
                     case 'Elf':
@@ -152,9 +152,9 @@ const T = () => {
                             name = 0
                         } else if  (name >= elf.length){
                             name = elf.length
-                            console.log(elf[name], '-----------------------------')
+                            // console.log(elf[name], '-----------------------------')
                         }
-                        console.log(elf[name])
+                        // console.log(elf[name])
                         setNam(elf[name])
                         break;
                     case 'Halfiling':
@@ -163,9 +163,9 @@ const T = () => {
                             name = 0
                         } else if  (name >= halfling.length){
                             name = halfling.length
-                            console.log(halfling[name], '-----------------------------')
+                            // console.log(halfling[name], '-----------------------------')
                         }
-                        console.log(halfling[name])
+                        // console.log(halfling[name])
                         setNam(halfling[name])
                         break;
                     case 'Human':
@@ -174,9 +174,9 @@ const T = () => {
                             name = 0
                         } else if  (name >= human.length){
                             name = human.length
-                            console.log(human[name], '-----------------------------')
+                            // console.log(human[name], '-----------------------------')
                         }
-                        console.log(human[name])
+                        // console.log(human[name])
                         setNam(human[name])
                         break;
                     case 'Dragonborn':
@@ -185,9 +185,9 @@ const T = () => {
                             name = 0
                         } else if  (name >= dwarf.length){
                             name = dwarf.length
-                            console.log(dwarf[name], '-----------------------------')
+                            // console.log(dwarf[name], '-----------------------------')
                         }
-                        console.log(dwarf[name])
+                        // console.log(dwarf[name])
                         setNam(dwarf[name])
                         break;
                     case 'Gnome':
@@ -196,9 +196,9 @@ const T = () => {
                             name = 0
                         } else if  (name >= gnome.length){
                             name = gnome.length
-                            console.log(gnome[name], '-----------------------------')
+                            // console.log(gnome[name], '-----------------------------')
                         }
-                        console.log(gnome[name])
+                        // console.log(gnome[name])
                         setNam(gnome[name])
                         break;
                     case 'Half-Elf':
@@ -207,9 +207,9 @@ const T = () => {
                             name = 0
                         } else if  (name >= dwarf.length){
                             name = dwarf.length
-                            console.log(dwarf[name], '-----------------------------')
+                            // console.log(dwarf[name], '-----------------------------')
                         }
-                        console.log(dwarf[name])
+                        // console.log(dwarf[name])
                         setNam(dwarf[name])
                         break;
                     case 'Half-Orc':
@@ -218,9 +218,9 @@ const T = () => {
                             name = 0
                         } else if  (name >= orc.length){
                             name = orc.length
-                            console.log(orc[name], '-----------------------------')
+                            // console.log(orc[name], '-----------------------------')
                         }
-                        console.log(orc[name])
+                        // console.log(orc[name])
                         setNam(orc[name])
                         break;
                     case 'Tiefling':
@@ -229,16 +229,16 @@ const T = () => {
                             name = 0
                         } else if  (name >= dwarf.length){
                             name = dwarf.length
-                            console.log(dwarf[name], '-----------------------------')
+                            // console.log(dwarf[name], '-----------------------------')
                         }
-                        console.log(dwarf[name])
+                        // console.log(dwarf[name])
                         setNam(dwarf[name])
                         break;
                 
                     default:
                         break;
                 }
-            console.log('name ' ,nam)
+            // console.log('name ' ,nam)
             }
     }
     
