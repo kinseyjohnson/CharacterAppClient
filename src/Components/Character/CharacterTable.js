@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Table, Button } from "reactstrap";
+import { Context } from '../../Context';
 
-const CharacterTable = (props) => {
-  console.log(props, '===================');
-  const deleteCharacter = (character) => {
-    fetch(`http://localhost:3000/character/${character.id}`, {
-      method: "DELETE",
-      headers: new Headers({
-        "Content-Type": "application/json",
-        "Authorization": `SECRET ${props.token}`,
-      }),
-    }).then(() => props.fetchCharacters());
-  };
+
+const CharacterTable = (props, characters) => {
+  const {username} = useContext(Context);
+  const {sessionToken} = useContext(Context);
+  console.log(props, '            props===================');
+  console.log(characters, '              characters===================');
+  // const deleteCharacter = (character) => {
+  //   fetch(`http://localhost:3000/character/usercharacters`, {
+  //     method: "DELETE",
+  //     headers: new Headers({
+  //       "Content-Type": "application/json",
+  //       "Authorization": `SECRET ${sessionToken}`,
+  //     }),9
+  //   }).then(() => props.fetchCharacters());
+  // };
 
   const characterMapper = () => {
     console.log(props, '++++++++++++++++++++++++++')

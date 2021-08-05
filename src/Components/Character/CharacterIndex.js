@@ -7,6 +7,7 @@ import { Context } from  '../../Context';
 
 
 const CharacterIndex = (props) => {
+  const {username} = {Context}
   const [characters, setCharacters] = useState([]);
   const [updateActive, setUpdateActive] = useState(false);
   const [characterToUpdate, setCharacterToUpdate] = useState({});
@@ -14,8 +15,8 @@ const CharacterIndex = (props) => {
   const {updateToken} = useContext(Context);
   
   const fetchCharacters = () => {
-      console.log(sessionToken);
-    fetch(`http://localhost:3000/character/11`, {
+      console.log(sessionToken, 'paaul');
+    fetch(`http://localhost:3000/character/misha`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -24,18 +25,18 @@ const CharacterIndex = (props) => {
     })
       .then((res) => res.json())
       .then((characterData) => {
-          console.log(characterData)
+          console.log(characterData, '        CharacterAppClient')
         setCharacters(characterData);
       });
   };
 
-  useEffect (() => {
+  useEffect(() => {
     fetchCharacters()
-  }, [characters])
+  }, [])
 
   const editUpdateCharacter = (character) => {
     setCharacterToUpdate(character);
-    console.log(character);
+    console.log(character, '                        character');
   };
 
 //   const updateOn = () => {

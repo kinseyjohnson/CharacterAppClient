@@ -32,13 +32,14 @@ const Login = (props) => {
             }).then(
                 (response) => response.json()
             ).then((data) => {
-                updateName(data.user.username)
                 console.log(data)
                 console.log(data.message);
                 if (data.sessionToken === undefined){
                     setNewToggle(!newToggle)
+                    
                 }
-                updateToken(data.sessionToken)
+                updateToken(data.sessionToken);
+                updateName(data.user.username)
                 console.log(data.sessionToken);
                 console.log(data)
             })

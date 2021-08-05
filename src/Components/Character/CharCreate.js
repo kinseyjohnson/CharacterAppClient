@@ -22,34 +22,34 @@ const Create = (props) => {
     const [charisma, setCharisma] = useState('');
 
 
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
     e.preventDefault();
     fetch("http://localhost:3000/character/create", {
-      method: "POST",
-      body: JSON.stringify({
+    method: "POST",
+    body: JSON.stringify({
         character: {
-          characterName: characterName,
-          playerName: playerName,
-          characterClass: characterClass,
-          level: level,
-          race: race,
-          background: background,
-          alignment: alignment,
-          strength: strength,
-          dexterity: dexterity,
-          constitution: constitution,
-          intelligence: intelligence,
-          wisdom: wisdom,
-          charisma: charisma,
+        characterName: characterName,
+        playerName: playerName,
+        characterClass: characterClass,
+        level: level,
+        race: race,
+        background: background,
+        alignment: alignment,
+        strength: strength,
+        dexterity: dexterity,
+        constitution: constitution,
+        intelligence: intelligence,
+        wisdom: wisdom,
+        charisma: charisma,
         },
-      }),
-      headers: new Headers({
+    }),
+    headers: new Headers({
         "Content-Type": "application/json",
         "Authorization": `SECRET ${sessionToken}`,
-      }),
+    }),
     })
-      .then((res) => res.json())
-      .then((characterData) => {
+    .then((res) => res.json())
+    .then((characterData) => {
         console.log(characterData, 'yeeeeeeeeee');
         setCharacterName("");
         setPlayerName("");
@@ -64,8 +64,8 @@ const Create = (props) => {
         setIntelligence("");
         setWisdom("");
         setCharisma("");
-      });
-  };
+    });
+};
 
 
 

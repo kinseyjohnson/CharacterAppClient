@@ -20,7 +20,7 @@ export default function Navigation() {
       <ul>
         <li>
           <NavLink
-            style={{ textDecoration: "none", color: "White" }}
+            className='nav-bg home'
             to="/"
             // activeClassName="main-nav-active"
           >
@@ -29,7 +29,7 @@ export default function Navigation() {
         </li>
         <li>
           <NavLink
-            style={{ textDecoration: "none", color: "White" }}
+            className='nav-bg'
             to="/login"
             activeClassName="main-nav-active"
           >
@@ -38,9 +38,8 @@ export default function Navigation() {
         </li>
         <li>
           <NavLink
-            style={{ textDecoration: "none", color: "White" }}
             to="/register"
-            className="main-nav"
+            className="main-nav nav-bg"
             activeClassName="main-nav-active"
           >
             Register
@@ -48,7 +47,7 @@ export default function Navigation() {
         </li>
         <li>
           <NavLink
-            style={{ textDecoration: "none", color: "White" }}
+            className='nav-bg'
             to="/create"
             activeClassName="main-nav-active"
           >
@@ -57,7 +56,7 @@ export default function Navigation() {
         </li>
         <li>
           <NavLink
-            style={{ textDecoration: "none", color: "White" }}
+            className='nav-bg'
             to="/account"
             activeClassName="main-nav-active"
           >
