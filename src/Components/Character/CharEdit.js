@@ -45,16 +45,16 @@ const Edit = (props) => {
           characterName: editCharacterName,
           playerName: editPlayerName,
           characterClass: editCharacterClass,
-        //   level: editLevel,
-        //   race: editRace,
-        //   background: editBackground,
-        //   alignment: editAlignment,
-        //   strength: editStrength,
-        //   dexterity: editDexterity,
-        //   constitution: editConstitution,
-        //   intelligence: editIntelligence,
-        //   wisdom: editWisdom,
-        //   charisma: editCharisma,
+          level: editLevel,
+          race: editRace,
+          background: editBackground,
+          alignment: editAlignment,
+          strength: editStrength,
+          dexterity: editDexterity,
+          constitution: editConstitution,
+          intelligence: editIntelligence,
+          wisdom: editWisdom,
+          charisma: editCharisma,
         },
       }),
       headers: new Headers({
@@ -69,36 +69,106 @@ const Edit = (props) => {
 
   return (
       // <div></div>
-    <Modal isOpen={true}>
-    <ModalHeader>Update a Character</ModalHeader>
-    <ModalBody>
-      <Form onSubmit={characterUpdate}>
-        <FormGroup>
-          <Label htmlFor="characterName">Edit Character Name:</Label>
-          <Input
-            name="characterName"
-            value={editCharacterName}
-            onChange={(e) => setEditCharacterName(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-            <Label htmlFor="playerName">Edit Player Name: </Label>
+      <Modal isOpen={true}>
+      <ModalHeader>Update a Character</ModalHeader>
+      <ModalBody>
+        <Form onSubmit={characterUpdate}>
+          <FormGroup>
+            <Label htmlFor="characterName">Edit Character Name:</Label>
             <Input
-            name="playerName"
-            value={editPlayerName}
-            onChange={(e) => setEditPlayerName(e.target.value)}/>
-        </FormGroup>
-        <FormGroup>
-        <Label htmlFor="characterClass">Edit Character Class:</Label>
-            <Input
-            name="characterClass"
-            value={editCharacterClass}
-            onChange={(e) => setEditCharacterClass(e.target.value)}/>
-        </FormGroup>
-        <Button type="submit">Update Character</Button>
-      </Form>
-    </ModalBody>
-  </Modal>
+              name="characterName"
+              value={editCharacterName}
+              onChange={(e) => setEditCharacterName(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+              <Label htmlFor="playerName">Edit Player Name: </Label>
+              <Input
+              name="playerName"
+              value={editPlayerName}
+              onChange={(e) => setEditPlayerName(e.target.value)}/>
+          </FormGroup>
+          <FormGroup>
+          <Label htmlFor="characterClass">Edit Character Class:</Label>
+              <Input
+              name="characterClass"
+              value={editCharacterClass}
+              onChange={(e) => setEditCharacterClass(e.target.value)}/>
+          </FormGroup>
+          <FormGroup>
+          <Label htmlFor="characterClass">Edit Character Level:</Label>
+              <Input
+              name="characterLevel"
+              value={editLevel}
+              onChange={(e) => setEditLevel(e.target.value)}/>
+          </FormGroup>
+          <FormGroup>
+          <Label htmlFor="characterRace">Edit Character Race</Label>
+              <Input
+              name="characterRace"
+              value={editRace}
+              onChange={(e) => setEditRace(e.target.value)}/>
+          </FormGroup>
+          <FormGroup>
+          <Label htmlFor="characterBackground">Edit Character Background</Label>
+              <Input
+              name="characterBackground"
+              value={editBackground}
+              onChange={(e) => setEditBackground(e.target.value)}/>
+          </FormGroup>
+          <FormGroup>
+          <Label htmlFor="characterAlignment">Edit Character Alignment</Label>
+              <Input
+              name="characterAlignment"
+              value={editAlignment}
+              onChange={(e) => setEditAlignment(e.target.value)}/>
+          </FormGroup>
+          <FormGroup>
+          <Label htmlFor="characterStrength">Edit Character Strength</Label>
+              <Input
+              name="characterStrength"
+              value={editStrength}
+              onChange={(e) => setEditStrength(e.target.value)}/>
+          </FormGroup>
+          <FormGroup>
+          <Label htmlFor="characterDexterity">Edit Character Dexterity</Label>
+              <Input
+              name="characterDexterity"
+              value={editDexterity}
+              onChange={(e) => setEditDexterity(e.target.value)}/>
+          </FormGroup>
+          <FormGroup>
+          <Label htmlFor="characterConstitution">Edit Character Constitution</Label>
+              <Input
+              name="characterConstitution"
+              value={editConstitution}
+              onChange={(e) => setEditConstitution(e.target.value)}/>
+          </FormGroup>
+          <FormGroup>
+          <Label htmlFor="characterIntelligence">Edit Character Intelligence</Label>
+              <Input
+              name="characterIntelligence"
+              value={editIntelligence}
+              onChange={(e) => setEditIntelligence(e.target.value)}/>
+          </FormGroup>
+          <FormGroup>
+          <Label htmlFor="characterWisdom">Edit Character Wisdom</Label>
+              <Input
+              name="characterWisdom"
+              value={editWisdom}
+              onChange={(e) => setEditWisdom(e.target.value)}/>
+          </FormGroup>
+          <FormGroup>
+          <Label htmlFor="characterCharisma">Edit Character Charisma</Label>
+              <Input
+              name="characterCharisma"
+              value={editCharisma}
+              onChange={(e) => setEditCharisma(e.target.value)}/>
+          </FormGroup>
+          <Button type="submit">Update Character</Button>
+        </Form>
+      </ModalBody>
+    </Modal>
 )};
 
 
