@@ -7,74 +7,70 @@ import { Context } from  '../../Context';
 
 
 const CharacterIndex = (props) => {
-  const {username} = {Context}
+  const {username} = useContext(Context)
   const [characters, setCharacters] = useState([]);
   const [updateActive, setUpdateActive] = useState(false);
   const [characterToUpdate, setCharacterToUpdate] = useState({});
   const {sessionToken} = useContext(Context);
   const {updateToken} = useContext(Context);
+
+
+  const editUpdateCharacter = (character) => {
+    setCharacterToUpdate(character);
+    console.log(character, '-------------------------------character');
+  };
+  
+  useEffect(() => {
+    fetchCharacters()
+  }, [])
+
+  const updateOn = () => {
+    setUpdateActive(true);
+  };
+
+  const updateOff = () => {
+    setUpdateActive(false);
+  };
   
   const fetchCharacters = () => {
-      console.log(sessionToken, 'paaul');
-    fetch(`http://localhost:3000/character/misha`, {
+    //   console.log(sessionToken, 'paaul');
+    // fetch(`http://localhost:3000/character/misha`, {
+    //   console.log(sessionToken);
+    fetch(`http://localhost:3000/character/usercharacters`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
         'Authorization': `SECRET ${sessionToken}`
       }),
     })
-      .then((res) => res.json())
-      .then((characterData) => {
-          console.log(characterData, '        CharacterAppClient')
+      .then(res => res.json())
+      .then(characterData => {
         setCharacters(characterData);
+        console.log(characterData, '        CharacterAppClient')
       });
   };
 
-  useEffect(() => {
-    fetchCharacters()
-  }, [])
-
-  const editUpdateCharacter = (character) => {
-    setCharacterToUpdate(character);
-    console.log(character, '                        character');
-  };
-
-//   const updateOn = () => {
-//     setUpdateActive(true);
-//   };
-
-//   const updateOff = () => {
-//     setUpdateActive(false);
-//   };
 
   return (
     <Container>
-        {/* {fetchCharacters} */}
-      {/* <Row>
+        <Row>
         <Col md="3">
-          <CharCreate fetchCharacters={fetchCharacters} token={props.token} />
-        </Col> */}
-        <Col md="9">
+          <CharCreate fetchCharacters={fetchCharacters} token={sessionToken} />
+        </Col>
+        <Col md="9" style={{"width": "100%"}}>
           <CharacterTable
             characters={characters}
-            // editUpdateCharacter={editCharacters}
-            // updateOn={updateOn}
+            editUpdateCharacter={editUpdateCharacter}
+            updateOn={updateOn}
             fetchCharacters={fetchCharacters}
             token={sessionToken}
           />
-        </Col>
-        {/* {updateActive ? (
-          <CharacterEdit
-            characterToUpdate={characterToUpdate}
-            updateOff={updateOff}
-            token={props.token}
-            fetchCharacters={fetchCharacters}
-          />
-        ) : (
-          <></>
-        )}
-      </Row> */}
+    </Col>
+                {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate}
+                updateOff={updateOff} token={sessionToken} fetchCharacters={fetchCharacters}/> : <></>}
+            </Row>
     </Container>
-  )};
+  )
+}
 
   export default CharacterIndex;

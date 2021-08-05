@@ -3,11 +3,9 @@ import { Table, Button } from "reactstrap";
 import { Context } from '../../Context';
 
 
-const CharacterTable = (props, characters) => {
+const CharacterTable = (props, character) => {
   const {username} = useContext(Context);
   const {sessionToken} = useContext(Context);
-  console.log(props, '            props===================');
-  console.log(characters, '              characters===================');
   // const deleteCharacter = (character) => {
   //   fetch(`http://localhost:3000/character/usercharacters`, {
   //     method: "DELETE",
@@ -17,9 +15,22 @@ const CharacterTable = (props, characters) => {
   //     }),9
   //   }).then(() => props.fetchCharacters());
   // };
+    console.log(props, "+++++++++++++++++++++++++here")
+  const deleteCharacter = (character) => {
+      // console.log(props.token)
+    fetch(`http://localhost:3000/character/delete/${character.id}`, {
+      method: "DELETE",
+      headers: new Headers({
+        "Content-Type": "application/json",
+        'Authorization': `SECRET ${sessionToken}`,
+      }),
+    }).then(() => {
+        console.log("Guten Tag")
+        props.fetchCharacters()});
+  };
+
 
   const characterMapper = () => {
-    console.log(props, '++++++++++++++++++++++++++')
     return props.characters.map((character, index) => {
       return (
         <tr key={index}>
@@ -29,15 +40,13 @@ const CharacterTable = (props, characters) => {
           <td>{character.race}</td>
           <td>
             <Button
-              style={{ backgroundColor: "grey", margin: "3px" }}
-              size="sm"
-            >
+              style={{ backgroundColor: "grey", margin: "3px" }} onClick={() => {props.editUpdateCharacter(character); props.updateOn()}}
+              size="sm">
               Edit
             </Button>{" "}
             <Button
-              style={{ backgroundColor: "grey", margin: "3px" }}
-              size="sm"
-            >
+              style={{ backgroundColor: "grey", margin: "3px" }} onClick={() => {deleteCharacter(character)}}
+              size="sm">
               Delete
             </Button>
           </td>
@@ -67,8 +76,7 @@ const CharacterTable = (props, characters) => {
           marginLeft: "auto",
           marginRight: "auto",
         }}
-        borderless
-      >
+        borderless>
         <thead>
           <tr>
             <th>#</th>

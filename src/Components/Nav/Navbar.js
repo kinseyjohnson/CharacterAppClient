@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,13 +8,18 @@ import {
 } from "react-router-dom";
 import Login from "../Auth/Sign-Log/Login";
 import Register from "../Auth/Sign-Log/Signup";
-import CreateChar from "../Character/CharCreate";
+// import CreateChar from "../Character/CharCreate";
 import Landing from "../Landing/LandingPage";
 // import CharTable from "../Character/CharacterTable";
 import CharacterIndex from '../Character/CharacterIndex';
 import "./navbar.css";
+import Create from "../Character/CharCreate";
+import {Context} from '../../Context';
 
-export default function Navigation() {
+export default function Navigation(props) {
+
+  const {clearToken} = useContext(Context)
+
   return (
     <Router>
       <ul>
@@ -22,7 +27,6 @@ export default function Navigation() {
           <NavLink
             className='nav-bg home'
             to="/"
-            // activeClassName="main-nav-active"
           >
             Home
           </NavLink>
@@ -63,9 +67,17 @@ export default function Navigation() {
             My Account
           </NavLink>
         </li>
+        <li>
+          <NavLink
+          className="defaulClear nav-bg"
+            to="/"
+            onClick={clearToken}
+          >
+            Logout
+          </NavLink>
+        </li>
       </ul>
 
-      <hr />
 
       <Switch>
         <Route exact path="/">
@@ -78,7 +90,7 @@ export default function Navigation() {
           <Register />
         </Route>
         <Route path="/create">
-          <CreateChar />
+          <Create token={props.token}/>
         </Route>
         <Route path="/account">
           <CharacterIndex />
@@ -86,8 +98,4 @@ export default function Navigation() {
       </Switch>
     </Router>
   );
-}
-
-function Home() {
-  return <div></div>;
 }

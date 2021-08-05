@@ -4,7 +4,6 @@
 .h2{
     display: flex;
     justify-content: center;
-    margin-top: 10%;
     color: lightgrey;
 }
 
@@ -27,7 +26,6 @@
 }
 
 .button{
-    justify-content: center;
     width: inherit;
     height: 50px;
     box-shadow: 7px -4px 7px black;

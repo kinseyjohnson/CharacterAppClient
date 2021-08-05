@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import Auth from './Components/Auth/Auth';
 import '../src/Components/Landing/landingpage.css'
 
 // import Auth from './Components/Auth/Auth';
@@ -22,8 +21,8 @@ import Navigation from './Components/Nav/Navbar';
 import { Context } from './Context';
 
 function App() {
-  const [toggle, setToggle] = useState(true);
-  const Tog = () => setToggle(!toggle);
+  // const [toggle, setToggle] = useState(true);
+  // const Tog = () => setToggle(!toggle);
 
 
   
@@ -53,10 +52,10 @@ function App() {
     console.log(newName , '-----------');
   }
 
-  // const clearToken = () => {
-  //   localStorage.clear();
-  //   setSessionToken('');
-  // }
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
 
 
   // const protectedViews = () => {
@@ -68,10 +67,10 @@ function App() {
 
     return (
       <Context.Provider value={{
-        updateName, updateToken, username, sessionToken
+        updateName, updateToken, username, sessionToken, clearToken
       }}>
       <div>
-        <Navigation/>
+        <Navigation token={sessionToken}/>
         <Footer />
       </div>
       </Context.Provider>

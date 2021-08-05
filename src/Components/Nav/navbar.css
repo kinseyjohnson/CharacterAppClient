@@ -4,7 +4,9 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: black;
-  }
+    box-shadow: 0px 12px 8px 0px rgba(34, 60, 80, 0.4);
+
+}
 
 
 li {
@@ -36,4 +38,10 @@ li {
     transition-property: opacity;
     opacity: 0.7;
     color: white;
+}
+
+.defaulClear{
+    color: white;
+    outline: none;
+    text-decoration: none;
 }
