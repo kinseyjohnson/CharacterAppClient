@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Table, Button } from "reactstrap";
 import { Context } from '../../Context';
+import APIURL from "../../helpers/environment";
 
 
 const CharacterTable = (props, character) => {
@@ -18,7 +19,7 @@ const CharacterTable = (props, character) => {
     // console.log(props, "+++++++++++++++++++++++++here")
   const deleteCharacter = (character) => {
       // console.log(props.token)
-    fetch(`http://localhost:3000/character/delete/${character.id}`, {
+    fetch(`${APIURL}/character/delete/${character.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

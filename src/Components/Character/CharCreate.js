@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import './charcreate.css'
 import { Context } from '../../Context';
+import APIURL from '../../helpers/environment';
 
 const Create = (props) => {
     const {username} = useContext(Context)
@@ -24,7 +25,7 @@ const Create = (props) => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/character/create", {
+    fetch(`${APIURL}/character/create`, {
     method: "POST",
     body: JSON.stringify({
         character: {
