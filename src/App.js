@@ -69,10 +69,8 @@ function App() {
       <Context.Provider value={{
         updateName, updateToken, username, sessionToken, clearToken
       }}>
-      <div>
         <Navigation token={sessionToken}/>
         <Footer />
-      </div>
       </Context.Provider>
     );
 }

@@ -59,7 +59,7 @@ const Edit = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        'Authorization': `SECRET ${props.token}`,
+        "Authorization": `SECRET ${props.token}`
       }),
     }).then((res) => {
       props.fetchCharacters();
