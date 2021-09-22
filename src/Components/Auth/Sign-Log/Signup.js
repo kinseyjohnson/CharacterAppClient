@@ -43,11 +43,8 @@ const Signup = (props) => {
         })
         .then(res => res.json())
         .then((data) => {
-            // console.log(data.user.username)
             updateName(data.user.username)
             updateToken(data.sessionToken)
-            // console.log(data)
-            // console.log(data.sessionToken, '++++++++++++++++')
             if (data.sessionToken === undefined){
                 setToggle(true);
                 setSayWarning('This email address is already used')
