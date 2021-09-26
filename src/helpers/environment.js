@@ -1,4 +1,4 @@
-let APIURL = 'https://fab-character-app-server.herokuapp.com';
+let APIURL = '';
 
 switch(window.location.hostname) {
     case 'localhost' || '127.0.0.1':
